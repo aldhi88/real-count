@@ -64,11 +64,11 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="topnav-layout">
                             <a href="{{route('master.partaiData')}}" class="dropdown-item">Partai</a>
-                            <a href="{{ route('master.calonData') }}" class="dropdown-item">Dapil</a>
+                            <a href="#" class="dropdown-item">Dapil</a>
                             <a href="layouts-boxed-width.html" class="dropdown-item">Kecamatan</a>
                             <a href="layouts-preloader.html" class="dropdown-item">Kelurahan</a>
-                            <a href="layouts-preloader.html" class="dropdown-item">TPS</a>
-                            <a href="layouts-preloader.html" class="dropdown-item">Calon</a>
+                            <a href="{{ route('master.tpsData') }}" class="dropdown-item">TPS</a>
+                            <a href="{{ route('master.calonData') }}" class="dropdown-item">Calon</a>
                         </div>
                     </li>
 
