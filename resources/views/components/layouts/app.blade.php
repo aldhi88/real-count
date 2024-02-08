@@ -10,7 +10,9 @@
         <meta content="Themesdesign" name="author" />
         <!-- App favicon -->
         <link rel="shortcut icon" href="{{asset('assets/images/favicon.ico')}}">
-
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets/libs/toastr/build/toastr.min.css') }}">
+        @yield('style')
+        @stack('push-style')
         <!-- Bootstrap Css -->
         <link href="{{asset('assets/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
         <!-- Icons Css -->
@@ -18,6 +20,34 @@
         <!-- App Css-->
         <link href="{{asset('assets/css/app.min.css')}}" rel="stylesheet" type="text/css" />
         @livewireStyles
+        <script>
+            function reload(){
+                window.setTimeout( function() {
+                    window.location.reload();
+                }, 3000);
+            }
+
+            function initSearchCol(table,headerId,inputClass){
+                // $(headerId+' th').each(function() {
+                //     var title = $(this).text();
+                //     var off = $(this).attr("off");
+                //     if (typeof off == typeof undefined) {
+                //         $(this).html('<input placeholder="'+title+'" type="text" class="'+inputClass+' text-center border border-light-dark py-1 w-100"/>');
+                //     }
+                // });
+
+                $(headerId).on('keyup', '.'+inputClass,function () {
+                    table.column( $(this).parent().index() ).search( this.value ).draw();
+                });
+
+                $(headerId).on('change', '.'+inputClass,function () {
+                    table.column( $(this).parent().index() ).search( this.value ).draw();
+                });
+
+                
+            }
+            // reload();
+        </script>
     </head>
 
     <body data-topbar="dark" data-layout="horizontal">
@@ -67,7 +97,8 @@
         <script src="{{asset('assets/libs/metismenu/metisMenu.min.js')}}"></script>
         <script src="{{asset('assets/libs/simplebar/simplebar.min.js')}}"></script>
         <script src="{{asset('assets/libs/node-waves/waves.min.js')}}"></script>
-
+        @yield('script')
+        @stack('push-script')
         <script src="{{asset('assets/js/app.js')}}"></script>
         @livewireScripts
     </body>

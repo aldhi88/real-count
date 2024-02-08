@@ -34,7 +34,11 @@ Route::prefix('master')->group(function () {
         Route::controller(MasterController::class)->group(function () {
 
             Route::get('/partai-data', 'partaiData')->name('partaiData');
+            Route::get('/partai-data', 'partaiData')->name('partaiData');
             Route::get('/calon-data', 'calonData')->name('calonData');
+
+
+            Route::get('/partai-data-dt', 'partaiDataDt')->name('partaiDataDt');
 
         });
     });

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Partai;
 use Illuminate\Http\Request;
+use DataTables;
 
 class MasterController extends Controller
 {
@@ -11,6 +13,29 @@ class MasterController extends Controller
         $data['page'] = 'partai_data';
         $data['title'] = "Data Partai";
         return view('mods.master.index', compact('data'));
+    }
+    public function partaiDataDt(){
+        $data = Partai::query();
+        return DataTables::of($data)
+            // ->addColumn('action', function($data){
+            //     return '
+            //         <div class="btn-group">
+            //             <a href="#" class="dropdown-toggle card-drop" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+            //                 <i class="mdi mdi-dots-vertical"></i>
+            //             </a>
+            //             <div class="dropdown-menu" style="">
+            //                 <a class="dropdown-item" data-id="'.$data->id.'" href="javascript:void(0);" data-toggle="modal" data-target="#editModal"><i class="far fa-edit"></i> Edit</a>
+            //             </div>
+            //         </div>
+            //     ';
+            // })
+            
+            ->addColumn('logo_format', function($data){
+                return 'logo';
+            })
+            // ->rawColumns(['action'])
+            ->toJson();
+
     }
 
     public function calonData()
