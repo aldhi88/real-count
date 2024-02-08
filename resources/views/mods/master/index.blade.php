@@ -22,8 +22,8 @@
 
 <div class="row">
     <div class="col">
-        @if ($data['page'] == 'index')
-            @livewire('dashboard.welcome')
+        @if ($data['page'] == 'partai_data')
+            @livewire('master.partai')
         @elseif ($data['page'] == 'calon_data')
             @livewire('master.calon')
         @endif
