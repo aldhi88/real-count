@@ -22,9 +22,9 @@
         ajax: '{{ route("master.tpsDataDt") }}',
         columns: [
             { data: 'action', name: 'created_at', orderable: true, searchable:false },
-            { data: 'dapil_id', name: 'dapil_id', orderable: true, searchable:true },
-            { data: 'kecamatan_id', name: 'kecamatan_id', orderable: true, searchable:true },
-            { data: 'kelurahan_id', name: 'kelurahan_id', orderable: true, searchable:true },
+            { data: 'dapils.no_dapil', name: 'dapils.no_dapil', orderable: true, searchable:true },
+            { data: 'kecamatans.nama_kecamatan', name: 'kecamatans.nama_kecamatan', orderable: true, searchable:true },
+            { data: 'kelurahans.nama_kelurahan', name: 'kelurahans.nama_kelurahan', orderable: true, searchable:true },
             { data: 'no_tps', name: 'no_tps', orderable: true, searchable:true },
             { data: 'jlh_pemilih', name: 'jlh_pemilih', orderable: true, searchable:true },
         ],

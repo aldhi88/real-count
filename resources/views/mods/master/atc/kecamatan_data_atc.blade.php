@@ -15,9 +15,9 @@
 
     var dtTable = $('#myTable').DataTable({
         processing: true,serverSide: true,pageLength: 25,
-        order: [[0, 'asc']],
+        order: [[1, 'asc']],
         columnDefs: [
-            { className: 'text-center', targets: [0,1] },
+            { className: 'text-left', targets: [0,1] },
         ],
         ajax: '{{ route("master.kecamatanDataDt") }}',
         columns: [

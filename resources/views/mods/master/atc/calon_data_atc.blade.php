@@ -15,9 +15,12 @@
 
     var dtTable = $('#myTable').DataTable({
         processing: true,serverSide: true,pageLength: 25,
-        order: [[0, 'asc']],
+        order: [
+            [2, 'asc'],
+            [4, 'asc'],
+        ],
         columnDefs: [
-            { className: 'text-center', targets: [0,1] },
+            { className: 'text-center', targets: [2,4] },
         ],
         ajax: '{{ route("master.calonDataDt") }}',
         columns: [
