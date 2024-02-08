@@ -15,13 +15,13 @@
 
     var dtTable = $('#myTable').DataTable({
         processing: true,serverSide: true,pageLength: 25,
-        order: [[0, 'asc']],
+        order: [[1, 'asc'],[4, 'asc']],
         columnDefs: [
-            { className: 'text-center', targets: [0,1] },
+            { className: 'text-center', targets: [0,1,4,5] },
         ],
         ajax: '{{ route("master.tpsDataDt") }}',
         columns: [
-            { data: 'action', name: 'created_at', orderable: true, searchable:false },
+            { data: 'DT_RowIndex', name: 'created_at', orderable: true, searchable:false },
             { data: 'dapils.no_dapil', name: 'dapils.no_dapil', orderable: true, searchable:true },
             { data: 'kecamatans.nama_kecamatan', name: 'kecamatans.nama_kecamatan', orderable: true, searchable:true },
             { data: 'kelurahans.nama_kelurahan', name: 'kelurahans.nama_kelurahan', orderable: true, searchable:true },
