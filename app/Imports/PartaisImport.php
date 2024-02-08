@@ -3,9 +3,11 @@
 namespace App\Imports;
 
 use App\Models\Partai;
-use Maatwebsite\Excel\Concerns\ToModel;
+use Carbon\Carbon;
+use Illuminate\Support\Collection;
+use Maatwebsite\Excel\Concerns\ToCollection;
 
-class PartaisImport implements ToModel
+class PartaisImport implements ToCollection
 {
     /**
      * @param array $row
@@ -20,12 +22,24 @@ class PartaisImport implements ToModel
         $this->status = 'pass';
     }
 
-    public function model(array $col)
+    public function collection(Collection $data)
     {
-        return new User([
-            'id' => $col[0],
-            'nama_partai' => $col[1],
-            'logo' => $col[2]
-        ]);
+        foreach ($data->toArray() as $key => $col) {
+            $dt[$key]['id'] = $col[0];
+            $dt[$key]['nama_partai'] = $col[1];
+            $dt[$key]['logo'] = $col[2];
+            $dt[$key]['created_at'] = Carbon::now();
+            $dt[$key]['updated_at'] = Carbon::now();
+        }
+
+        if($this->status == "pass"){
+            Partai::insert($dt);
+        }
+
+    }
+
+    public function runCallBack()
+    {
+        return $this->status;
     }
 }

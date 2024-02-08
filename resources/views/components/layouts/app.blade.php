@@ -98,6 +98,7 @@
         <script src="{{asset('assets/libs/metismenu/metisMenu.min.js')}}"></script>
         <script src="{{asset('assets/libs/simplebar/simplebar.min.js')}}"></script>
         <script src="{{asset('assets/libs/node-waves/waves.min.js')}}"></script>
+        <script src="{{ asset('assets/libs/toastr/build/toastr.min.js') }}"></script>
         @yield('script')
         @stack('push-script')
         <script src="{{asset('assets/js/app.js')}}"></script>

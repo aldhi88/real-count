@@ -17,23 +17,12 @@ class MasterController extends Controller
     public function partaiDataDt(){
         $data = Partai::query();
         return DataTables::of($data)
-            // ->addColumn('action', function($data){
-            //     return '
-            //         <div class="btn-group">
-            //             <a href="#" class="dropdown-toggle card-drop" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
-            //                 <i class="mdi mdi-dots-vertical"></i>
-            //             </a>
-            //             <div class="dropdown-menu" style="">
-            //                 <a class="dropdown-item" data-id="'.$data->id.'" href="javascript:void(0);" data-toggle="modal" data-target="#editModal"><i class="far fa-edit"></i> Edit</a>
-            //             </div>
-            //         </div>
-            //     ';
-            // })
-
             ->addColumn('logo_format', function($data){
-                return 'logo';
+                $img = asset('assets/images/partai/'.$data->logo);
+                return '<img src="'.$img.'" alt="" class="rounded avatar-lg">';
             })
-            // ->rawColumns(['action'])
+            ->rawColumns(['logo_format'])
+            ->addIndexColumn()
             ->toJson();
 
     }
