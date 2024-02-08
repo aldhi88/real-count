@@ -28,7 +28,7 @@
             @elseif ($data['page'] == 'tps_data')
                 @livewire('master.tps-data')
             @elseif ($data['page'] == 'kecamatan_data')
-                @livewire('master.kecamatan')
+                @livewire('master.kecamatan-data')
             @elseif ($data['page'] == 'kelurahan_data')
                 @livewire('master.kelurahan-data')
             @elseif ($data['page'] == 'dapil_data')

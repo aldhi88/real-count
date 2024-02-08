@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Dapil;
 use App\Models\Calon;
+use App\Models\Kecamatan;
 use App\Models\Kelurahan;
 use App\Models\Partai;
+use App\Models\Tps;
 use Illuminate\Http\Request;
 use DataTables;
 
@@ -114,7 +116,7 @@ class MasterController extends Controller
     }
     public function tpsDataDt()
     {
-        $data = tps::query();
+        $data = Tps::query();
         return DataTables::of($data)
             // ->addColumn('action', function($data){
             //     return '
@@ -142,6 +144,30 @@ class MasterController extends Controller
         $data['title'] = "Data Kecamatan";
         return view('mods.master.index', compact('data'));
     }
+    public function kecamatanDataDt()
+    {
+        $data = Kecamatan::query();
+        return DataTables::of($data)
+            // ->addColumn('action', function($data){
+            //     return '
+            //         <div class="btn-group">
+            //             <a href="#" class="dropdown-toggle card-drop" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+            //                 <i class="mdi mdi-dots-vertical"></i>
+            //             </a>
+            //             <div class="dropdown-menu" style="">
+            //                 <a class="dropdown-item" data-id="'.$data->id.'" href="javascript:void(0);" data-toggle="modal" data-target="#editModal"><i class="far fa-edit"></i> Edit</a>
+            //             </div>
+            //         </div>
+            //     ';
+            // })
+
+            ->addColumn('logo_format', function ($data) {
+                return 'logo';
+            })
+            // ->rawColumns(['action'])
+            ->toJson();
+    }
+
     public function kelurahanData()
     {
         $data['page'] = 'kelurahan_data';
