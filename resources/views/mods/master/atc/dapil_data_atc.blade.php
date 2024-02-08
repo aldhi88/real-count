@@ -19,14 +19,10 @@
         columnDefs: [
             { className: 'text-center', targets: [0,1] },
         ],
-        ajax: '{{ route("master.calonDataDt") }}',
+        ajax: '{{ route("master.dapilDataDt") }}',
         columns: [
             { data: 'action', name: 'created_at', orderable: true, searchable:false },
-            { data: 'partai_id', name: 'partai_id', orderable: true, searchable:true },
-            { data: 'dapil_id', name: 'dapil_id', orderable: true, searchable:true },
-            { data: 'nama', name: 'nama', orderable: true, searchable:true },
-            { data: 'no_urut', name: 'no_urut', orderable: true, searchable:true },
-            { data: 'gender', name: 'gender', orderable: true, searchable:true },
+            { data: 'no_dapil', name: 'no_dapil', orderable: true, searchable:true },
         ],
         initComplete: function(settings){
             table = settings.oInstance.api();

@@ -22,15 +22,15 @@
     <div class="row">
         <div class="col">
             @if ($data['page'] == 'partai_data')
-                @livewire('master.partai')
+                @livewire('master.partai-data')
             @elseif ($data['page'] == 'calon_data')
-                @livewire('master.calon')
+                @livewire('master.calon-data')
             @elseif ($data['page'] == 'tps_data')
                 @livewire('master.tps-data')
             @elseif ($data['page'] == 'kecamatan_data')
                 @livewire('master.kecamatan')
             @elseif ($data['page'] == 'kelurahan_data')
-                @livewire('master.kelurahan')
+                @livewire('master.kelurahan-data')
             @elseif ($data['page'] == 'dapil_data')
                 @livewire('master.dapil')
             @endif
