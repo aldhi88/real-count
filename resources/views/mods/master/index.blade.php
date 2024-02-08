@@ -30,7 +30,7 @@
             @elseif ($data['page'] == 'kecamatan_data')
                 @livewire('master.kecamatan')
             @elseif ($data['page'] == 'kelurahan_data')
-                @livewire('master.kelurahan')
+                @livewire('master.kelurahan-data')
             @elseif ($data['page'] == 'dapil_data')
                 @livewire('master.dapil')
             @endif

@@ -5,7 +5,7 @@ namespace App\Livewire\Master;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
-class Kelurahan extends Component
+class KelurahanData extends Component
 {
 
     use WithFileUploads;

@@ -26,7 +26,7 @@ class CalonData extends Component
     public function importData()
     {
         $this->validate();
-
+        dd('okee');
     }
 
     public function render()
