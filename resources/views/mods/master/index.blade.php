@@ -22,10 +22,10 @@
 
 <div class="row">
     <div class="col">
-        @if ($data['page'] == 'partai_data')
-            @livewire('master.partai')
-        {{-- @elseif () --}}
-            
+        @if ($data['page'] == 'index')
+            @livewire('dashboard.welcome')
+        @elseif ($data['page'] == 'calon_data')
+            @livewire('master.calon')
         @endif
     </div>
 </div>
