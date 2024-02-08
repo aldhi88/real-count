@@ -9,9 +9,9 @@
 
     <script>
 
-    // window.addEventListener('reloadDt', param => {
-    //     dtTable.ajax.reload();
-    // });
+    window.addEventListener('reloadDt', param => {
+        dtTable.ajax.reload();
+    });
 
     var dtTable = $('#myTable').DataTable({
         processing: true,serverSide: true,pageLength: 25,
