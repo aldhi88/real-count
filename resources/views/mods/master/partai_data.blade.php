@@ -29,9 +29,9 @@
                                 <th class="text-center">Logo</th>
                                 <th class="text-center">Nama Partai</th>
                             </tr>
-                            
+
                             </thead>
-                
+
                             <thead id="header-filter">
                                 <tr>
                                     <th class="text-center"></th>
@@ -39,10 +39,10 @@
                                     <th class="text-center"><input type="text" class="form-control form-control-sm text-center search-col-dt"></th>
                                 </tr>
                             </thead>
-                    
-                    
+
+
                             <tbody>
-                            
+
                             </tbody>
                         </table>
                     </div>

@@ -37,6 +37,8 @@ class Partai extends Component
         }
 
     
+
+
     }
 
 
@@ -45,5 +47,5 @@ class Partai extends Component
         return view('mods.master.partai_data');
     }
 
-    
+
 }
