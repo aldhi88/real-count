@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Master;
 
+use App\Imports\CalonsImport;
 use App\Imports\PartaisImport;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -28,11 +29,11 @@ class CalonData extends Component
     public function importData()
     {
         $this->validate();
-        $import = new PartaisImport();
+        $import = new CalonsImport();
         Excel::import($import, $this->file_import);
         if(($import->runCallBack())=="pass"){
             $this->dispatch('reloadDt');
-            $this->dispatch('alert', data:['type' => 'success',  'message' => 'Data Partai berhasil ditambahkan.']);
+            $this->dispatch('alert', data:['type' => 'success',  'message' => 'Data Calon berhasil ditambahkan.']);
         }else{
             $this->dispatch('alert', data:['type' => 'error',  'message' => 'Error export file.']);
         }

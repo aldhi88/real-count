@@ -26,13 +26,13 @@
             @elseif ($data['page'] == 'calon_data')
                 @livewire('master.calon-data')
             @elseif ($data['page'] == 'tps_data')
-                @livewire('master.tps')
+                @livewire('master.tps-data')
             @elseif ($data['page'] == 'kecamatan_data')
                 @livewire('master.kecamatan')
             @elseif ($data['page'] == 'kelurahan_data')
                 @livewire('master.kelurahan-data')
             @elseif ($data['page'] == 'dapil_data')
-                @livewire('master.dapil')
+                @livewire('master.dapil-data')
             @endif
         </div>
     </div>

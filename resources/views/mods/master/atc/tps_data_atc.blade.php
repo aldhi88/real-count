@@ -19,10 +19,14 @@
         columnDefs: [
             { className: 'text-center', targets: [0,1] },
         ],
-        ajax: '{{ route("master.dapilDataDt") }}',
+        ajax: '{{ route("master.tpsDataDt") }}',
         columns: [
-            { data: 'DT_RowIndex', name: 'created_at', orderable: true, searchable:false },
-            { data: 'no_dapil', name: 'no_dapil', orderable: true, searchable:true },
+            { data: 'action', name: 'created_at', orderable: true, searchable:false },
+            { data: 'dapil_id', name: 'dapil_id', orderable: true, searchable:true },
+            { data: 'kecamatan_id', name: 'kecamatan_id', orderable: true, searchable:true },
+            { data: 'kelurahan_id', name: 'kelurahan_id', orderable: true, searchable:true },
+            { data: 'no_tps', name: 'no_tps', orderable: true, searchable:true },
+            { data: 'jlh_pemilih', name: 'jlh_pemilih', orderable: true, searchable:true },
         ],
         initComplete: function(settings){
             table = settings.oInstance.api();

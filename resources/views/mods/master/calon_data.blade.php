@@ -23,8 +23,8 @@
 
                     <div class="dt-responsive table-responsive mt-2">
                         <div wire:ignore>
-                        <table id="myTable" class="table table-bordered table-striped dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-                            <thead class="thead-light">
+                            <table id="myTable" class="table table-bordered table-striped dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                <thead class="thead-light">
                             <tr>
                                 <th class="text-center" width="10"></th>
                                 <th class="text-center">Partai</th>

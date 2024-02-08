@@ -22,6 +22,7 @@
                 <div class="card-body">
 
                     <div class="dt-responsive table-responsive mt-2">
+                        <div wire:ignore>
                         <table id="myTable" class="table table-bordered table-striped dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                             <thead class="thead-light">
                             <tr>
@@ -43,6 +44,7 @@
 
                             </tbody>
                         </table>
+                        </div>
                     </div>
                 </div>
             </div>
