@@ -2,8 +2,10 @@
 
 namespace App\Livewire\Master;
 
+use App\Imports\KelurahansImport;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use Maatwebsite\Excel\Facades\Excel;
 
 class KelurahanData extends Component
 {
@@ -26,7 +28,14 @@ class KelurahanData extends Component
     public function importData()
     {
         $this->validate();
-        dd('okee');
+        $import = new KelurahansImport();
+        Excel::import($import, $this->file_import);
+        if (($import->runCallBack()) == "pass") {
+            $this->dispatch('reloadDt');
+            $this->dispatch('alert', data: ['type' => 'success',  'message' => 'Data Kelurahan berhasil ditambahkan.']);
+        } else {
+            $this->dispatch('alert', data: ['type' => 'error',  'message' => 'Error export file.']);
+        }
     }
     public function render()
     {
