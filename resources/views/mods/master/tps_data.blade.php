@@ -22,35 +22,37 @@
                 <div class="card-body">
 
                     <div class="dt-responsive table-responsive mt-2">
-                        <table id="myTable" class="table table-bordered table-striped dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-                            <thead class="thead-light">
-                            <tr>
-                                <th class="text-center" width="10"></th>
-                                <th class="text-center">Dapil</th>
-                                <th class="text-center">Kecamatan</th>
-                                <th class="text-center">Kelurahan</th>
-                                <th class="text-center">No TPS</th>
-                                <th class="text-center">Jumlah Pemilih</th>
-                            </tr>
-
-                            </thead>
-
-                            <thead id="header-filter">
+                        <div wire:ignore>
+                            <table id="myTable" class="table table-bordered table-striped dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                <thead class="thead-light">
                                 <tr>
-                                    <th class="text-center"></th>
-                                    <th class="text-center"><input type="text" class="form-control form-control-sm text-center search-col-dt"></th>
-                                    <th class="text-center"><input type="text" class="form-control form-control-sm text-center search-col-dt"></th>
-                                    <th class="text-center"><input type="text" class="form-control form-control-sm text-center search-col-dt"></th>
-                                    <th class="text-center"><input type="text" class="form-control form-control-sm text-center search-col-dt"></th>
-                                    <th class="text-center"><input type="text" class="form-control form-control-sm text-center search-col-dt"></th>
+                                    <th class="text-center" width="10"></th>
+                                    <th class="text-center">Dapil</th>
+                                    <th class="text-center">Kecamatan</th>
+                                    <th class="text-center">Kelurahan</th>
+                                    <th class="text-center">No TPS</th>
+                                    <th class="text-center">Jumlah Pemilih</th>
                                 </tr>
-                            </thead>
+
+                                </thead>
+
+                                <thead id="header-filter">
+                                    <tr>
+                                        <th class="text-center"></th>
+                                        <th class="text-center"><input type="text" class="form-control form-control-sm text-center search-col-dt"></th>
+                                        <th class="text-center"><input type="text" class="form-control form-control-sm text-center search-col-dt"></th>
+                                        <th class="text-center"><input type="text" class="form-control form-control-sm text-center search-col-dt"></th>
+                                        <th class="text-center"><input type="text" class="form-control form-control-sm text-center search-col-dt"></th>
+                                        <th class="text-center"><input type="text" class="form-control form-control-sm text-center search-col-dt"></th>
+                                    </tr>
+                                </thead>
 
 
-                            <tbody>
+                                <tbody>
 
-                            </tbody>
-                        </table>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>

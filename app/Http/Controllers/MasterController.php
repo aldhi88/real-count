@@ -21,16 +21,16 @@ class MasterController extends Controller
     {
         $data = Partai::query();
         return DataTables::of($data)
-            ->addColumn('logo_format', function($data){
-                $img = asset('assets/images/partai/'.$data->logo);
-                return '<img src="'.$img.'" alt="" class="rounded avatar-lg">';
+            ->addColumn('logo_format', function ($data) {
+                $img = asset('assets/images/partai/' . $data->logo);
+                return '<img src="' . $img . '" alt="" class="rounded avatar-lg">';
             })
             ->rawColumns(['logo_format'])
             ->addIndexColumn()
             ->toJson();
-
     }
-    public function calonDataDt(){
+    public function calonDataDt()
+    {
         $data = Calon::query();
         return DataTables::of($data)
             // ->addColumn('action', function($data){
@@ -46,14 +46,14 @@ class MasterController extends Controller
             //     ';
             // })
 
-            ->addColumn('logo_format', function($data){
+            ->addColumn('logo_format', function ($data) {
                 return 'logo';
             })
             // ->rawColumns(['action'])
             ->toJson();
-
     }
-    public function kelurahanDataDt(){
+    public function kelurahanDataDt()
+    {
         $data = Kelurahan::query();
         return DataTables::of($data)
             // ->addColumn('action', function($data){
@@ -69,14 +69,14 @@ class MasterController extends Controller
             //     ';
             // })
 
-            ->addColumn('logo_format', function($data){
+            ->addColumn('logo_format', function ($data) {
                 return 'logo';
             })
             // ->rawColumns(['action'])
             ->toJson();
-
     }
-    public function dapilDataDt(){
+    public function dapilDataDt()
+    {
         $data = Dapil::query();
         return DataTables::of($data)
             // ->addColumn('action', function($data){
@@ -129,6 +129,9 @@ class MasterController extends Controller
             //     ';
             // })
 
+            ->addColumn('logo_format', function ($data) {
+                return 'logo';
+            })
             // ->rawColumns(['action'])
             ->toJson();
     }
