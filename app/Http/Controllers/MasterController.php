@@ -44,4 +44,18 @@ class MasterController extends Controller
         $data['title'] = "Data Calon";
         return view('mods.master.index', compact('data'));
     }
+
+    public function tpsData()
+    {
+        $data['page'] = 'tps_data';
+        $data['title'] = "Data TPS";
+        return view('mods.master.index', compact('data'));
+    }
+
+    public function kecamatanData()
+    {
+        $data['page'] = 'kecamatan_data';
+        $data['title'] = "Data Kecamatan";
+        return view('mods.master.index', compact('data'));
+    }
 }
