@@ -19,6 +19,7 @@
         <link href="{{asset('assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
         <!-- App Css-->
         <link href="{{asset('assets/css/app.min.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('assets/mine/style.css') }}" rel="stylesheet" type="text/css" />
         @livewireStyles
         <script>
             function reload(){
@@ -100,6 +101,7 @@
         @yield('script')
         @stack('push-script')
         <script src="{{asset('assets/js/app.js')}}"></script>
+        <script src="{{ asset('assets/mine/script.js') }}"></script>
         @livewireScripts
     </body>
 </html>
