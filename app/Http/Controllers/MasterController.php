@@ -160,11 +160,8 @@ class MasterController extends Controller
             //         </div>
             //     ';
             // })
-
-            ->addColumn('logo_format', function ($data) {
-                return 'logo';
-            })
             // ->rawColumns(['action'])
+            ->addIndexColumn()
             ->toJson();
     }
 

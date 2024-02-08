@@ -21,7 +21,7 @@
         ],
         ajax: '{{ route("master.kecamatanDataDt") }}',
         columns: [
-            { data: 'action', name: 'created_at', orderable: true, searchable:false },
+            { data: 'DT_RowIndex', name: 'created_at', orderable: true, searchable:false },
             { data: 'nama_kecamatan', name: 'nama_kecamatan', orderable: true, searchable:true },
         ],
         initComplete: function(settings){

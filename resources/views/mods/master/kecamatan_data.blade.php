@@ -51,6 +51,6 @@
         </div>
     </div>
 
-    @include('mods.master.atc.calon_data_atc')
+    @include('mods.master.atc.kecamatan_data_atc')
 </div>
 
