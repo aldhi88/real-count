@@ -12,4 +12,11 @@ class MasterController extends Controller
         $data['title'] = "Data Partai";
         return view('mods.master.index', compact('data'));
     }
+
+    public function calonData()
+    {
+        $data['page'] = 'calon_data';
+        $data['title'] = "Data Calon";
+        return view('mods.master.index', compact('data'));
+    }
 }
