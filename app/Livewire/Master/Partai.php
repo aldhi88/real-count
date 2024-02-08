@@ -25,8 +25,8 @@ class Partai extends Component
     public function importData()
     {
         $this->validate();
-        
-        
+
+
     }
 
 
@@ -35,5 +35,5 @@ class Partai extends Component
         return view('mods.master.partai_data');
     }
 
-    
+
 }
