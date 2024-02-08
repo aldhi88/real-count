@@ -19,7 +19,7 @@
         columnDefs: [
             { className: 'text-center', targets: [0,1] },
         ],
-        ajax: '{{ route("master.partaiDataDt") }}',
+        ajax: '{{ route("master.calonDataDt") }}',
         columns: [
             { data: 'action', name: 'created_at', orderable: true, searchable:false },
             { data: 'partai_id', name: 'partai_id', orderable: true, searchable:true },

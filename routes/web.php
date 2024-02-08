@@ -41,6 +41,8 @@ Route::prefix('master')->group(function () {
             Route::get('/dapil-data', 'dapilData')->name('dapilData');
 
             Route::get('/partai-data-dt', 'partaiDataDt')->name('partaiDataDt');
+            Route::get('/calon-data-dt', 'calonDataDt')->name('calonDataDt');
+            Route::get('/kelurahan-data-dt', 'kelurahanDataDt')->name('kelurahanDataDt');
         });
     });
 });

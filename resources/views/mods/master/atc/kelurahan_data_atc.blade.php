@@ -19,7 +19,7 @@
         columnDefs: [
             { className: 'text-center', targets: [0,1] },
         ],
-        ajax: '{{ route("master.partaiDataDt") }}',
+        ajax: '{{ route("master.kelurahanDataDt") }}',
         columns: [
             { data: 'action', name: 'created_at', orderable: true, searchable:false },
             { data: 'kecamatan_id', name: 'kecamatan_id', orderable: true, searchable:true },
