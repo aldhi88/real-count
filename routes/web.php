@@ -33,7 +33,7 @@ Route::prefix('master')->group(function () {
     Route::name('master.')->group(function () {
         Route::controller(MasterController::class)->group(function () {
 
-            Route::get('/index', 'index')->name('index');
+            Route::get('/partai-data', 'partaiData')->name('partaiData');
 
         });
     });

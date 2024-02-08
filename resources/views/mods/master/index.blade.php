@@ -22,9 +22,9 @@
 
 <div class="row">
     <div class="col">
-        @if ($data['page'] == 'index')
-            @livewire('dashboard.welcome')
-        @else
+        @if ($data['page'] == 'partai_data')
+            @livewire('master.partai')
+        {{-- @elseif () --}}
             
         @endif
     </div>
