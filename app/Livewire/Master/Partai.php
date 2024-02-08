@@ -3,9 +3,12 @@
 namespace App\Livewire\Master;
 
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class Partai extends Component
 {
+    use WithFileUploads;
+
     public $file_import;
 
     public function rules()
@@ -16,14 +19,14 @@ class Partai extends Component
     }
 
     protected $validationAttributes = [
-        "file_import" => "File Excel belum dipilih",
-        
+        "file_import" => "File Excel",
     ];
 
     public function importData()
     {
         $this->validate();
-        dd('ok');
+        
+        
     }
 
 
