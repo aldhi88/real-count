@@ -29,7 +29,7 @@ class MasterController extends Controller
             //         </div>
             //     ';
             // })
-            
+
             ->addColumn('logo_format', function($data){
                 return 'logo';
             })
@@ -56,6 +56,19 @@ class MasterController extends Controller
     {
         $data['page'] = 'kecamatan_data';
         $data['title'] = "Data Kecamatan";
+        return view('mods.master.index', compact('data'));
+    }
+    public function kelurahanData()
+    {
+        $data['page'] = 'kelurahan_data';
+        $data['title'] = "Data Kelurahan";
+        return view('mods.master.index', compact('data'));
+    }
+
+    public function dapilData()
+    {
+        $data['page'] = 'dapil_data';
+        $data['title'] = "Data Dapil";
         return view('mods.master.index', compact('data'));
     }
 }

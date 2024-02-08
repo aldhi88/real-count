@@ -29,6 +29,10 @@
                 @livewire('master.tps')
             @elseif ($data['page'] == 'kecamatan_data')
                 @livewire('master.kecamatan')
+            @elseif ($data['page'] == 'kelurahan_data')
+                @livewire('master.kelurahan')
+            @elseif ($data['page'] == 'dapil_data')
+                @livewire('master.dapil')
             @endif
         </div>
     </div>
