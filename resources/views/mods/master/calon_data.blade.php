@@ -57,6 +57,6 @@
         </div>
     </div>
 
-    @include('mods.master.atc.partai_data_atc')
+    @include('mods.master.atc.calon_data_atc')
 </div>
 
