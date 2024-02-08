@@ -9,9 +9,9 @@
         
     <script>
 
-    // window.addEventListener('reloadDt', param => {
-    //     dtTable.ajax.reload();
-    // });
+    window.addEventListener('reloadDt', param => {
+        dtTable.ajax.reload();
+    });
 
     var dtTable = $('#myTable').DataTable({
         processing: true,serverSide: true,pageLength: 25,
@@ -21,7 +21,7 @@
         ],
         ajax: '{{ route("master.partaiDataDt") }}',
         columns: [
-            { data: 'action', name: 'created_at', orderable: true, searchable:false },
+            { data: 'DT_RowIndex', name: 'created_at', orderable: true, searchable:false },
             { data: 'logo_format', name: 'logo', orderable: false, searchable:false },
             { data: 'nama_partai', name: 'nama_partai', orderable: true, searchable:true },
         ],
