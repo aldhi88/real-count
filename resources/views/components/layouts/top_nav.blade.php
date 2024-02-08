@@ -58,14 +58,13 @@
                     </li> --}}
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-layout" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-layout" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="ri-layout-3-line mr-2"></i>Master <div class="arrow-down"></div>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="topnav-layout">
-                            <a href="{{route('master.partaiData')}}" class="dropdown-item">Partai</a>
+                            <a href="{{ route('master.partaiData') }}" class="dropdown-item">Partai</a>
                             <a href="#" class="dropdown-item">Dapil</a>
-                            <a href="layouts-boxed-width.html" class="dropdown-item">Kecamatan</a>
+                            <a href="{{ route('master.kecamatanData') }}" class="dropdown-item">Kecamatan</a>
                             <a href="layouts-preloader.html" class="dropdown-item">Kelurahan</a>
                             <a href="{{ route('master.tpsData') }}" class="dropdown-item">TPS</a>
                             <a href="{{ route('master.calonData') }}" class="dropdown-item">Calon</a>

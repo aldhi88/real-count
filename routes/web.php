@@ -24,7 +24,6 @@ Route::prefix('dashboard')->group(function () {
         Route::controller(DashboardController::class)->group(function () {
 
             Route::get('/index', 'index')->name('index');
-
         });
     });
 });
@@ -36,7 +35,7 @@ Route::prefix('master')->group(function () {
             Route::get('/partai-data', 'partaiData')->name('partaiData');
             Route::get('/calon-data', 'calonData')->name('calonData');
             Route::get('/tps-data', 'tpsData')->name('tpsData');
-
+            Route::get('/kecamatan-data', 'kecamatanData')->name('kecamatanData');
         });
     });
 });
