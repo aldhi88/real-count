@@ -26,7 +26,7 @@
             @elseif ($data['page'] == 'calon_data')
                 @livewire('master.calon')
             @elseif ($data['page'] == 'tps_data')
-                @livewire('master.tps')
+                @livewire('master.tps-data')
             @elseif ($data['page'] == 'kecamatan_data')
                 @livewire('master.kecamatan')
             @elseif ($data['page'] == 'kelurahan_data')
