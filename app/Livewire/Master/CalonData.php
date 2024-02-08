@@ -5,7 +5,7 @@ namespace App\Livewire\Master;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
-class Calon extends Component
+class CalonData extends Component
 {
 
     use WithFileUploads;
