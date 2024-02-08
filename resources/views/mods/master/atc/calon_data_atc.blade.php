@@ -21,9 +21,9 @@
         ],
         ajax: '{{ route("master.calonDataDt") }}',
         columns: [
-            { data: 'action', name: 'created_at', orderable: true, searchable:false },
-            { data: 'partai_id', name: 'partai_id', orderable: true, searchable:true },
-            { data: 'dapil_id', name: 'dapil_id', orderable: true, searchable:true },
+            { data: 'DT_RowIndex', name: 'created_at', orderable: true, searchable:false },
+            { data: 'partais.nama_partai', name: 'partais.nama_partai', orderable: true, searchable:true },
+            { data: 'dapils.no_dapil', name: 'dapils.no_dapil', orderable: true, searchable:true },
             { data: 'nama', name: 'nama', orderable: true, searchable:true },
             { data: 'no_urut', name: 'no_urut', orderable: true, searchable:true },
             { data: 'gender', name: 'gender', orderable: true, searchable:true },

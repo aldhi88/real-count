@@ -32,7 +32,7 @@
             @elseif ($data['page'] == 'kelurahan_data')
                 @livewire('master.kelurahan-data')
             @elseif ($data['page'] == 'dapil_data')
-                @livewire('master.dapil')
+                @livewire('master.dapil-data')
             @endif
         </div>
     </div>

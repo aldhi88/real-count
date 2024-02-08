@@ -2,13 +2,12 @@
 
 namespace App\Livewire\Master;
 
-use App\Imports\CalonsImport;
-use App\Imports\PartaisImport;
+use App\Imports\DapilsImport;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Maatwebsite\Excel\Facades\Excel;
 
-class CalonData extends Component
+class DapilData extends Component
 {
 
     use WithFileUploads;
@@ -29,18 +28,17 @@ class CalonData extends Component
     public function importData()
     {
         $this->validate();
-        $import = new CalonsImport();
+        $import = new DapilsImport();
         Excel::import($import, $this->file_import);
         if(($import->runCallBack())=="pass"){
             $this->dispatch('reloadDt');
-            $this->dispatch('alert', data:['type' => 'success',  'message' => 'Data Calon berhasil ditambahkan.']);
+            $this->dispatch('alert', data:['type' => 'success',  'message' => 'Data Dapil berhasil ditambahkan.']);
         }else{
             $this->dispatch('alert', data:['type' => 'error',  'message' => 'Error export file.']);
         }
     }
-
     public function render()
     {
-        return view('mods.master.calon_data');
+        return view('mods.master.dapil_data');
     }
 }

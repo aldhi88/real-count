@@ -21,7 +21,7 @@
         ],
         ajax: '{{ route("master.dapilDataDt") }}',
         columns: [
-            { data: 'action', name: 'created_at', orderable: true, searchable:false },
+            { data: 'DT_RowIndex', name: 'created_at', orderable: true, searchable:false },
             { data: 'no_dapil', name: 'no_dapil', orderable: true, searchable:true },
         ],
         initComplete: function(settings){
