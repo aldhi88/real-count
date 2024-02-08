@@ -5,7 +5,7 @@ namespace App\Livewire\Master;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
-class Calon extends Component
+class KelurahanData extends Component
 {
 
     use WithFileUploads;
@@ -26,11 +26,10 @@ class Calon extends Component
     public function importData()
     {
         $this->validate();
-
+        dd('okee');
     }
-
     public function render()
     {
-        return view('mods.master.calon_data');
+        return view('mods.master.kelurahan_data');
     }
 }

@@ -5,8 +5,9 @@ namespace App\Livewire\Master;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
-class Partai extends Component
+class CalonData extends Component
 {
+
     use WithFileUploads;
 
     public $file_import;
@@ -25,15 +26,11 @@ class Partai extends Component
     public function importData()
     {
         $this->validate();
-
-
+        dd('okee');
     }
-
 
     public function render()
     {
-        return view('mods.master.partai_data');
+        return view('mods.master.calon_data');
     }
-
-
 }
