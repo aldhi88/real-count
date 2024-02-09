@@ -33,6 +33,8 @@
                 @livewire('master.kelurahan-data')
             @elseif ($data['page'] == 'dapil_data')
                 @livewire('master.dapil-data')
+            @elseif ($data['page'] == 'saksi_data')
+                @livewire('master.saksi-data')
             @endif
         </div>
     </div>

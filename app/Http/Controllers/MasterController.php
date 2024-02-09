@@ -8,6 +8,7 @@ use App\Models\Kecamatan;
 use App\Models\Kelurahan;
 use App\Models\Partai;
 use App\Models\Tps;
+use App\Models\User;
 use Illuminate\Http\Request;
 use DataTables;
 
@@ -31,33 +32,19 @@ class MasterController extends Controller
             ->addIndexColumn()
             ->toJson();
     }
+    
+    public function calonData()
+    {
+        $data['page'] = 'calon_data';
+        $data['title'] = "Data Calon";
+        return view('mods.master.index', compact('data'));
+    }
     public function calonDataDt()
     {
         $data = Calon::query()->with(['partais', 'dapils']);
         return DataTables::of($data)
             ->addIndexColumn()
             ->toJson();
-    }
-    public function kelurahanDataDt()
-    {
-        $data = Kelurahan::query()->with(['kecamatans']);
-        return DataTables::of($data)
-            ->addIndexColumn()
-            ->toJson();
-    }
-    public function dapilDataDt()
-    {
-        $data = Dapil::query();
-        return DataTables::of($data)
-            ->addIndexColumn()
-            ->toJson();
-    }
-
-    public function calonData()
-    {
-        $data['page'] = 'calon_data';
-        $data['title'] = "Data Calon";
-        return view('mods.master.index', compact('data'));
     }
 
     public function tpsData()
@@ -90,19 +77,6 @@ class MasterController extends Controller
     {
         $data = Kecamatan::query();
         return DataTables::of($data)
-            // ->addColumn('action', function($data){
-            //     return '
-            //         <div class="btn-group">
-            //             <a href="#" class="dropdown-toggle card-drop" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
-            //                 <i class="mdi mdi-dots-vertical"></i>
-            //             </a>
-            //             <div class="dropdown-menu" style="">
-            //                 <a class="dropdown-item" data-id="'.$data->id.'" href="javascript:void(0);" data-toggle="modal" data-target="#editModal"><i class="far fa-edit"></i> Edit</a>
-            //             </div>
-            //         </div>
-            //     ';
-            // })
-            // ->rawColumns(['action'])
             ->addIndexColumn()
             ->toJson();
     }
@@ -113,11 +87,55 @@ class MasterController extends Controller
         $data['title'] = "Data Kelurahan";
         return view('mods.master.index', compact('data'));
     }
+    public function kelurahanDataDt()
+    {
+        $data = Kelurahan::query()->with(['kecamatans']);
+        return DataTables::of($data)
+            ->addIndexColumn()
+            ->toJson();
+    }
 
     public function dapilData()
     {
         $data['page'] = 'dapil_data';
         $data['title'] = "Data Dapil";
         return view('mods.master.index', compact('data'));
+    }
+    public function dapilDataDt()
+    {
+        $data = Dapil::query();
+        return DataTables::of($data)
+            ->addIndexColumn()
+            ->toJson();
+    }
+
+    public function saksiData()
+    {
+        $data['page'] = 'saksi_data';
+        $data['title'] = "Data Saksi";
+        return view('mods.master.index', compact('data'));
+    }
+    public function saksiDataDt()
+    {
+        $data = User::select([
+                'users.*'
+            ])
+            ->where('users.id','!=',1)
+            ->where('users.id','!=',2)
+            ->with([
+                'tps',
+                'tps.kecamatans',
+                'tps.kelurahans',
+            ])
+        ;
+        return DataTables::of($data)
+            // ->addColumn('logo_format', function ($data) {
+            //     $img = asset('assets/images/partai/' . $data->logo);
+            //     return '<img src="' . $img . '" alt="" class="rounded avatar-lg">';
+            // })
+            // ->rawColumns(['logo_format'])
+            ->addIndexColumn()
+            ->smart(false)
+            ->toJson();
     }
 }

@@ -22,10 +22,10 @@
 
 <div class="row">
     <div class="col">
-        @if ($data['page'] == 'dashboard_admin')
-            @livewire('dashboard.dashboard-admin')
-        @elseif ($data['page'] == 'dashboard_saksi')
-        @livewire('dashboard.welcome')
+        @if ($data['page'] == 'rekap_per_dapil')
+            @livewire('rekap.rekap-per-dapil',['data' => $data['dapil']])
+        {{-- @elseif ($data['page'] == 'dashboard_saksi') --}}
+        
         @endif
     </div>
 </div>

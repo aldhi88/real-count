@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Calon extends Model
@@ -16,5 +17,9 @@ class Calon extends Model
     public function dapils()
     {
         return $this->belongsTo(Dapil::class, 'dapil_id');
+    }
+    public function rekaps():HasMany
+    {
+        return $this->hasMany(Rekap::class, 'calon_id','id');
     }
 }

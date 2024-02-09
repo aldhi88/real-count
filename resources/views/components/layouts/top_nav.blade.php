@@ -6,7 +6,7 @@
                 <ul class="navbar-nav">
 
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">
+                        <a class="nav-link" href="{{route('dashboard.index')}}">
                             <i class="ri-dashboard-line mr-2"></i> Dashboard
                         </a>
                     </li>
@@ -57,6 +57,16 @@
                         </div>
                     </li> --}}
 
+                    @if (Auth::id() != 1 && Auth::id() != 2)
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('saksi.formHasil')}}">
+                            <i class="ri-dashboard-line mr-2"></i> Form Hasil Suara
+                        </a>
+                    </li>
+                    @endif
+
+                    @if (Auth::id() == 1 || Auth::id() == 2)
+                    
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-layout" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="ri-layout-3-line mr-2"></i>Master <div class="arrow-down"></div>
@@ -68,8 +78,43 @@
                             <a href="{{ route('master.kelurahanData') }}" class="dropdown-item">Kelurahan</a>
                             <a href="{{ route('master.tpsData') }}" class="dropdown-item">TPS</a>
                             <a href="{{ route('master.calonData') }}" class="dropdown-item">Calon</a>
+                            <a href="{{ route('master.saksiData') }}" class="dropdown-item">Saksi</a>
                         </div>
                     </li>
+
+                    {{-- <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-layout" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="ri-layout-3-line mr-2"></i>Rekap <div class="arrow-down"></div>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="topnav-layout">
+                            <a href="{{ route('rekap.rekapPerDapil') }}" class="dropdown-item">Rekap per Dapil</a>
+                        </div>
+                    </li> --}}
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-more" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="ri-file-copy-2-line mr-2"></i>Rekap <div class="arrow-down"></div>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="topnav-more">
+                            <div class="dropdown">
+                                <a class="dropdown-item dropdown-toggle arrow-none" href="#" id="topnav-auth"
+                                    role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Dapil <div class="arrow-down"></div>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="topnav-auth">
+                                    <a href="{{route('rekap.rekapPerDapil',1)}}" class="dropdown-item">Dapil 1</a>
+                                </div>
+                            </div>
+                            
+                            {{-- <div class="dropdown-menu dropdown-menu-right" aria-labelledby="topnav-layout">
+                                <a href="{{ route('rekap.rekapPerDapil') }}" class="dropdown-item">Rekap per Dapil</a>
+                            </div> --}}
+                        </div>
+                    </li>
+
+                    @endif
+
 
                 </ul>
             </div>
