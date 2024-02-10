@@ -2,6 +2,7 @@ version: '3'
 services:
     laravel.test:
         container_name: laravel-real-count
+        restart: always
         build:
             context: ./vendor/laravel/sail/runtimes/8.3
             dockerfile: Dockerfile
@@ -27,6 +28,7 @@ services:
             - mysql
     mysql:
         container_name: mysql-real-count
+        restart: always
         image: 'mysql/mysql-server:8.0'
         ports:
             - '${FORWARD_DB_PORT:-3306}:3306'
@@ -51,6 +53,7 @@ services:
             retries: 3
             timeout: 5s
     phpmyadmin:
+    restart: always
         container_name: phpmyadmin-real-count
         image: phpmyadmin:5.2.1-apache
         ports:
