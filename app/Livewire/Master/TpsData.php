@@ -3,6 +3,9 @@
 namespace App\Livewire\Master;
 
 use App\Imports\TpsImport;
+use App\Models\Dapil;
+use App\Models\Kecamatan;
+use App\Models\Kelurahan;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Maatwebsite\Excel\Facades\Excel;
@@ -12,6 +15,9 @@ class TpsData extends Component
     use WithFileUploads;
 
     public $file_import;
+    public $dtDapil=[];
+    public $dtKec=[];
+    public $dtKel=[];
 
     public function rules()
     {
@@ -23,6 +29,13 @@ class TpsData extends Component
     protected $validationAttributes = [
         "file_import" => "File Excel",
     ];
+
+    public function mount()
+    {
+        $this->dtDapil = Dapil::all()->toArray();
+        $this->dtKec = Kecamatan::all()->toArray();
+        $this->dtKel = Kelurahan::all()->toArray();
+    }
 
     public function importData()
     {

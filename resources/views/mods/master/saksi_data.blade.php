@@ -1,5 +1,5 @@
 <div>
-    <div class="row">
+    {{-- <div class="row">
         <div class="col-6">
 
             <form wire:submit="importData">
@@ -15,7 +15,7 @@
 
         </div>
     </div>
-    <hr>
+    <hr> --}}
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
@@ -61,6 +61,6 @@
         </div>
     </div>
 
-    @include('mods.master.atc.partai_data_atc')
+    @include('mods.master.atc.saksi_data_atc')
 </div>
 

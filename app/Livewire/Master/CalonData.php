@@ -4,6 +4,7 @@ namespace App\Livewire\Master;
 
 use App\Imports\CalonsImport;
 use App\Imports\PartaisImport;
+use App\Models\Partai;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Maatwebsite\Excel\Facades\Excel;
@@ -14,6 +15,7 @@ class CalonData extends Component
     use WithFileUploads;
 
     public $file_import;
+    public $dtPartai = [];
 
     public function rules()
     {
@@ -25,6 +27,11 @@ class CalonData extends Component
     protected $validationAttributes = [
         "file_import" => "File Excel",
     ];
+
+    public function mount()
+    {
+        $this->dtPartai = Partai::all()->toArray();
+    }
 
     public function importData()
     {

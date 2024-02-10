@@ -4,16 +4,20 @@
 
             @push('push-script')
                 <script>
-                    $('.angka').on('input', function() {
-                        var value = $(this).val();
-                        // Memastikan bahwa nilai yang dimasukkan adalah angka dan lebih besar dari 0
-                        if ($.isNumeric(value) && parseFloat(value) > 0) {
-                            // Jika valid, biarkan input tetap seperti itu
-                        } else {
-                            // Jika tidak valid, hapus karakter terakhir dari input
+                    var value = $(this).val();
+                    // Memastikan bahwa nilai yang dimasukkan adalah angka
+                    if ($.isNumeric(value)) {
+                        // Memeriksa jika angka yang dimasukkan adalah 0 dan jika ada angka lain di sebelah kanan 0
+                        if (value.includes('0') && value.charAt(value.indexOf('0') + 1) !== '') {
+                            // Hapus karakter terakhir dari input
                             $(this).val(value.slice(0, -1));
                         }
-                    });
+                    } else {
+                        // Jika nilai yang dimasukkan bukan angka, hapus karakter terakhir dari input
+                        $(this).val(value.slice(0, -1));
+                    }
+
+                    
                 </script>
             @endpush    
 

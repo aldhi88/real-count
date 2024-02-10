@@ -27,8 +27,8 @@
                                 <thead class="thead-light">
                             <tr>
                                 <th class="text-center" width="10"></th>
-                                <th class="text-center">Partai</th>
                                 <th class="text-center">Dapil</th>
+                                <th class="text-center">Partai</th>
                                 <th class="text-center">Nama</th>
                                 <th class="text-center">No Urut</th>
                                 <th class="text-center">Gender</th>
@@ -40,10 +40,24 @@
                                 <tr>
                                     <th class="text-center"></th>
                                     <th class="text-center"><input type="text" class="form-control form-control-sm text-center search-col-dt"></th>
+                                    <th class="">
+                                        <select id="select2-calon" class="form-control form-control-sm search-col-dt">
+                                            <option value="">Filter per Partai</option>
+                                            @foreach ($dtPartai as $item)
+                                                <option value="{{$item['id']}}">{{$item['nama_partai']}}</option>
+                                            @endforeach
+                                        </select>
+                                    </th>
                                     <th class="text-center"><input type="text" class="form-control form-control-sm text-center search-col-dt"></th>
                                     <th class="text-center"><input type="text" class="form-control form-control-sm text-center search-col-dt"></th>
-                                    <th class="text-center"><input type="text" class="form-control form-control-sm text-center search-col-dt"></th>
-                                    <th class="text-center"><input type="text" class="form-control form-control-sm text-center search-col-dt"></th>
+                                    <th class="">
+                                        <select class="form-control form-control-sm search-col-dt">
+                                            <option value="">Filter per Gender</option>
+                                            <option value="Laki - Laki">Laki-Laki</option>
+                                            <option value="Perempuan">Perempuan</option>
+                                            
+                                        </select>
+                                    </th>
                                 </tr>
                             </thead>
 

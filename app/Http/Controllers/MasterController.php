@@ -30,6 +30,7 @@ class MasterController extends Controller
             })
             ->rawColumns(['logo_format'])
             ->addIndexColumn()
+            ->smart(false)
             ->toJson();
     }
     
@@ -41,9 +42,11 @@ class MasterController extends Controller
     }
     public function calonDataDt()
     {
-        $data = Calon::query()->with(['partais', 'dapils']);
+        $data = Calon::select('calons.*')
+            ->with(['partais', 'dapils']);
         return DataTables::of($data)
             ->addIndexColumn()
+            ->smart(false)
             ->toJson();
     }
 
@@ -55,7 +58,9 @@ class MasterController extends Controller
     }
     public function tpsDataDt()
     {
-        $data = Tps::query()
+        $data = Tps::select(
+                'tps.*'
+            )
             ->with([
                 'dapils',
                 'kecamatans',
@@ -64,6 +69,7 @@ class MasterController extends Controller
         ;
         return DataTables::of($data)
             ->addIndexColumn()
+            ->smart(false)
             ->toJson();
     }
 
@@ -89,9 +95,10 @@ class MasterController extends Controller
     }
     public function kelurahanDataDt()
     {
-        $data = Kelurahan::query()->with(['kecamatans']);
+        $data = Kelurahan::select('kelurahans.*')->with(['kecamatans']);
         return DataTables::of($data)
             ->addIndexColumn()
+            ->smart(false)
             ->toJson();
     }
 
@@ -124,6 +131,7 @@ class MasterController extends Controller
             ->where('users.id','!=',2)
             ->with([
                 'tps',
+                'tps.dapils',
                 'tps.kecamatans',
                 'tps.kelurahans',
             ])

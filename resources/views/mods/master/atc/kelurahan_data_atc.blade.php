@@ -17,13 +17,13 @@
         processing: true,serverSide: true,pageLength: 25,
         order: [[0, 'asc']],
         columnDefs: [
-            { className: 'text-center', targets: [0,1] },
+            { className: 'text-center', targets: [] },
         ],
         ajax: '{{ route("master.kelurahanDataDt") }}',
         columns: [
-            { data: 'DT_RowIndex', name: 'created_at', orderable: true, searchable:false },
-            { data: 'kecamatans.nama_kecamatan', name: 'kecamatans.nama_kecamatan', orderable: true, searchable:true },
+            { data: 'DT_RowIndex', name: 'id', orderable: true, searchable:false },
             { data: 'nama_kelurahan', name: 'nama_kelurahan', orderable: true, searchable:true },
+            { data: 'kecamatans.nama_kecamatan', name: 'kecamatan_id', orderable: true, searchable:true },
         ],
         initComplete: function(settings){
             table = settings.oInstance.api();

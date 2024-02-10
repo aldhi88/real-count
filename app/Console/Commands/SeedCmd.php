@@ -6,7 +6,9 @@ use App\Models\Tps;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Console\Command;
+use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class SeedCmd extends Command
 {
@@ -52,19 +54,40 @@ class SeedCmd extends Command
         User::insert($dt);
         unset($dt);
 
-        $tps = Tps::all()->toArray();
+        $tps = Tps::select([
+                'tps.id',
+                'tps.dapil_id',
+                'tps.kecamatan_id',
+                'tps.kelurahan_id',
+                'tps.no_tps',
+            ])
+            ->with([
+                'kecamatans'=>function(Builder $q){
+                    $q->select('id','nama_kecamatan');
+                },
+                'kelurahans'=>function(Builder $q){
+                    $q->select('id','nama_kelurahan');
+                },
+            ])
+            ->get()
+            ->toArray();
         
         $id = 3;
         foreach ($tps as $key => $value) {
-            $dt['id'] = $id+$key;
-            $dt['tps_id'] = $value['id'];
-            $dt['username'] = 'saksi'.$value['id'];
-            $dt['password'] = Hash::make('rahasia');
-            $dt['nama'] = 'Saksi '.$value['id'];
-            User::create($dt);
-            unset($dt);
-            echo "Data ke-". ($key+1) .' (ok)'."\n";
+            $kec = str_replace(' ', '', $value['kecamatans']['nama_kecamatan']);
+            $kec = strtolower($kec);
+
+            $dt[$key]['id'] = $id+$key;
+            $dt[$key]['tps_id'] = $value['id'];
+            $dt[$key]['username'] = 'dapil'.$value['dapil_id'].$kec;
+            $dt[$key]['password'] = $value['kelurahans']['nama_kelurahan'].$value['no_tps'].'_'.Str::random(5);
+            $dt[$key]['nama'] = 'Saksi '.$value['id'];
+            $dt[$key]['created_at'] = Carbon::now();
+            $dt[$key]['updated_at'] = Carbon::now();
+
+            echo $dt[$key]['nama']. "..dipersiapkan..\n";
         }
+        User::insert($dt);
         echo "Users data has been generated\n";
     }
 }

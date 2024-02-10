@@ -31,18 +31,19 @@
     var dtTable = $('#myTable').DataTable({
         processing: true,serverSide: true,pageLength: 25,
         lengthMenu: [25, 50, 100, 250, 500, 1000],
-        order: [[1, 'asc'],[2, 'asc'],[4, 'asc']],
+        order: [[0, 'asc']],
         columnDefs: [
-            { className: 'text-center', targets: [1,4] },
+            { className: 'text-center', targets: [2,4] },
         ],
-        ajax: '{{ route("master.calonDataDt") }}',
+        ajax: '{{ route("master.saksiDataDt") }}',
         columns: [
-            { data: 'DT_RowIndex', name: 'created_at', orderable: true, searchable:false },
-            { data: 'dapils.no_dapil', name: 'dapils.no_dapil', orderable: true, searchable:true },
-            { data: 'partais.nama_partai', name: 'partai_id', orderable: true, searchable:true },
+            { data: 'DT_RowIndex', name: 'id', orderable: true, searchable:false },
+            { data: 'username', name: 'username', orderable: true, searchable:true },
             { data: 'nama', name: 'nama', orderable: true, searchable:true },
-            { data: 'no_urut', name: 'no_urut', orderable: true, searchable:true },
-            { data: 'gender', name: 'gender', orderable: true, searchable:true },
+            { data: 'tps.dapils.no_dapil', name: 'tps.dapils.no_dapil', orderable: true, searchable:true },
+            { data: 'tps.kecamatans.nama_kecamatan', name: 'tps.kecamatans.nama_kecamatan', orderable: true, searchable:true },
+            { data: 'tps.kelurahans.nama_kelurahan', name: 'tps.kelurahans.nama_kelurahan', orderable: true, searchable:true },
+            { data: 'tps.no_tps', name: 'tps.no_tps', orderable: true, searchable:true },
         ],
         initComplete: function(settings){
             table = settings.oInstance.api();

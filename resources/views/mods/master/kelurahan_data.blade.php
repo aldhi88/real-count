@@ -27,8 +27,8 @@
                             <thead class="thead-light">
                             <tr>
                                 <th class="text-center" width="10"></th>
-                                <th class="text-center">Kecamatan</th>
                                 <th class="text-center">Keluarahan</th>
+                                <th class="text-center">Kecamatan</th>
                             </tr>
 
                             </thead>
@@ -37,7 +37,14 @@
                                 <tr>
                                     <th class="text-center"></th>
                                     <th class="text-center"><input type="text" class="form-control form-control-sm text-center search-col-dt"></th>
-                                    <th class="text-center"><input type="text" class="form-control form-control-sm text-center search-col-dt"></th>
+                                    <th class="text-center">
+                                        <select class="form-control form-control-sm search-col-dt">
+                                            <option value="">Filter per Kecamatan</option>
+                                            @foreach ($dtKec as $item)
+                                                <option value="{{$item['id']}}">{{$item['nama_kecamatan']}}</option>
+                                            @endforeach
+                                        </select>
+                                    </th>
                                 </tr>
                             </thead>
 

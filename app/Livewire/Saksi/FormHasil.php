@@ -33,38 +33,6 @@ class FormHasil extends Component
             ->orderBy('id','asc')
             ->get()
             ->toArray();
-        //  dd($this->all());       
-        // $this->calon_golkar = Partai::where('id', 8)
-        //     ->with([
-        //         'rekaps'=> function(Builder $q){
-        //             $q->where('tps_id', Auth::user()->tps->id)
-        //             ->with([
-        //                 'calons',
-        //                 // 'partais',
-        //                 // 'kecamatans',
-        //                 // 'kelurahans',
-        //                 // 'tps',
-        //             ]);
-        //         }
-        //     ])
-        //     ->orderBy('id','asc')
-        //     ->first()
-        //     ->toArray();
-        
-        // $dtRekap = Rekap::where('tps_id', Auth::user()->tps->id)
-        //     ->with([
-        //         'calons',
-        //         'partais',
-        //         'kecamatans',
-        //         'kelurahans',
-        //         'tps',
-        //     ])
-        //     ->get()
-        //     ->toArray();
-        
-        // $this->calon_golkar = array_values(collect($dtRekap)->where('partai_id',8)->toArray());
-
-        // dd($this->all());
         
     }
 
@@ -95,8 +63,10 @@ class FormHasil extends Component
 
     public function onMinus($index1,$index2,$id)
     {
-        $this->list_partai[$index1]['rekaps'][$index2]['jumlah'] -= 1;
-        Rekap::find($id)->update(['jumlah' => $this->list_partai[$index1]['rekaps'][$index2]['jumlah']]);
+        if($this->list_partai[$index1]['rekaps'][$index2]['jumlah'] > 0){
+            $this->list_partai[$index1]['rekaps'][$index2]['jumlah'] -= 1;
+            Rekap::find($id)->update(['jumlah' => $this->list_partai[$index1]['rekaps'][$index2]['jumlah']]);
+        }
     }
 
     public function render()

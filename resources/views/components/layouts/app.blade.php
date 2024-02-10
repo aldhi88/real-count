@@ -23,12 +23,6 @@
         <link href="{{ asset('assets/mine/style.css') }}" rel="stylesheet" type="text/css" />
         @livewireStyles
         <script>
-            function reload(){
-                window.setTimeout( function() {
-                    window.location.reload();
-                }, 3000);
-            }
-
             function initSearchCol(table,headerId,inputClass){
                 // $(headerId+' th').each(function() {
                 //     var title = $(this).text();

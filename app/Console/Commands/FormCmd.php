@@ -15,7 +15,7 @@ class FormCmd extends Command
      *
      * @var string
      */
-    protected $signature = 'app:form';
+    protected $signature = 'app:rekap';
 
     /**
      * The console command description.

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->foreignId('tps_id')->nullable();
-            $table->string('username', 16)->unique();
+            $table->string('username', 32);
             $table->string('password');
             $table->string('nama');
             $table->timestamps();

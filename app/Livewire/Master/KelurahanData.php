@@ -3,6 +3,7 @@
 namespace App\Livewire\Master;
 
 use App\Imports\KelurahansImport;
+use App\Models\Kecamatan;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Maatwebsite\Excel\Facades\Excel;
@@ -13,6 +14,7 @@ class KelurahanData extends Component
     use WithFileUploads;
 
     public $file_import;
+    public $dtKec = [];
 
     public function rules()
     {
@@ -24,6 +26,11 @@ class KelurahanData extends Component
     protected $validationAttributes = [
         "file_import" => "File Excel",
     ];
+
+    public function mount()
+    {
+        $this->dtKec = Kecamatan::all()->toArray();
+    }
 
     public function importData()
     {
