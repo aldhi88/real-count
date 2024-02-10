@@ -83,7 +83,7 @@ class SeedCmd extends Command
             $dt[$key]['id'] = $id+$key;
             $dt[$key]['tps_id'] = $value['id'];
             $dt[$key]['username'] = 'dapil'.$value['dapil_id'].$kec;
-            $dt[$key]['password'] = $value['kelurahans']['nama_kelurahan'].$value['no_tps'].'_'.Str::random(5);
+            $dt[$key]['password'] = $kel.$value['no_tps'].'_'.Str::random(5);
             $dt[$key]['nama'] = 'Saksi '.$value['id'];
             $dt[$key]['created_at'] = Carbon::now();
             $dt[$key]['updated_at'] = Carbon::now();
