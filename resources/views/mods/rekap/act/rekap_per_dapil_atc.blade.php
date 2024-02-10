@@ -9,22 +9,25 @@
         
     <script>
 
-    window.addEventListener('reloadDt', param => {
-        dtTable.ajax.reload();
-    });
+    // window.addEventListener('reloadDt', param => {
+    //     dtTable.ajax.reload();
+    // });
 
     function reloadDataTable() {
         dtTable.ajax.reload(); // Memuat ulang DataTable
     }
 
-    // Memulai interval untuk memuat ulang DataTable setiap 10 detik
     setInterval(reloadDataTable, 2000); 
 
     var dtTable = $('#myTable').DataTable({
         processing: false,serverSide: true,pageLength: 25,
-        order: [[3, 'desc']],
+        searching: false, 
+        lengthChange: false,
+        paging: false,
+        info: false,
+        order: [[0, 'asc']],
         columnDefs: [
-            { className: 'text-center', targets: [3] },
+            { className: 'text-center', targets: [0,2] },
         ],
         ajax: {
             url: '{{ route("rekap.rekapPerDapilDt") }}',
@@ -34,13 +37,15 @@
         },
         columns: [
             { data: 'no_urut', name: 'no_urut', orderable: true, searchable:false },
-            { data: 'nama', name: 'nama', orderable: true, searchable:true },
-            { data: 'partais.nama_partai', name: 'partais.nama_partai', orderable: true, searchable:true },
-            { data: 'total_suara', name: 'total_suara', orderable: true, searchable:false },
+            { data: 'nama', name: 'nama', orderable: false, searchable:false },
+            // { data: 'partais.nama_partai', name: 'partais.nama_partai', orderable: true, searchable:true },
+            { data: 'total_suara', name: 'total_suara', orderable: false, searchable:false,render: function(data, type, row) {
+                return data.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+            } },
         ],
         initComplete: function(settings){
-            table = settings.oInstance.api();
-            initSearchCol(table,'#header-filter','search-col-dt');
+            // table = settings.oInstance.api();
+            // initSearchCol(table,'#header-filter','search-col-dt');
         }
     });
 

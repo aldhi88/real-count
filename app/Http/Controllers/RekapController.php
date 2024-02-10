@@ -12,7 +12,7 @@ class RekapController extends Controller
     public function rekapPerDapil($dapilId)
     {
         $data['page'] = 'rekap_per_dapil';
-        $data['title'] = "Rekap Data Per Dapil";
+        $data['title'] = "Rekap Data Per Dapil ".$dapilId;
         $data['dapil'] = $dapilId;
         return view('mods.rekap.index', compact('data'));
     }
@@ -31,11 +31,12 @@ class RekapController extends Controller
                 'partais'
             ])
             ->where('partai_id', 8)
-            ->where('dapil_id', 1)
         ;
 
-        // dd($data->get()->toArray());
-        // $data = Partai::query();
+        if(isset($request->dapilId)){
+            $data->where('dapil_id',$request->dapilId);
+        }
+        
         return DataTables::of($data)
             ->addColumn('logo_format', function ($data) {
                 $img = asset('assets/images/partai/' . $data->logo);

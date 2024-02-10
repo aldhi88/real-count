@@ -89,6 +89,7 @@ Route::middleware('auth:web')->group(function(){
             Route::controller(RekapController::class)->group(function () {
     
                 Route::get('/rekap-per-dapil/{dapilId}', 'rekapPerDapil')->name('rekapPerDapil');
+                Route::get('/rekap-dapil', 'rekapDapil')->name('rekapDapil');
                 
                 Route::get('/rekap-per-dapil-dt', 'rekapPerDapilDt')->name('rekapPerDapilDt');
             });

@@ -94,16 +94,19 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-more" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="ri-file-copy-2-line mr-2"></i>Rekap <div class="arrow-down"></div>
+                            <i class="fas fa-record-vinyl mr-2 text-danger fa-fw"></i>Live Rekap <div class="arrow-down"></div>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="topnav-more">
                             <div class="dropdown">
                                 <a class="dropdown-item dropdown-toggle arrow-none" href="#" id="topnav-auth"
                                     role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Dapil <div class="arrow-down"></div>
+                                    Rekap Per Dapil <div class="arrow-down"></div>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="topnav-auth">
-                                    <a href="{{route('rekap.rekapPerDapil',1)}}" class="dropdown-item">Dapil 1</a>
+                                    <a target="_blank" href="{{route('rekap.rekapPerDapil',1)}}" class="dropdown-item">Dapil 1</a>
+                                    <a target="_blank" href="{{route('rekap.rekapPerDapil',2)}}" class="dropdown-item">Dapil 2</a>
+                                    <a target="_blank" href="{{route('rekap.rekapPerDapil',3)}}" class="dropdown-item">Dapil 3</a>
+                                    <a target="_blank" href="{{route('rekap.rekapPerDapil',4)}}" class="dropdown-item">Dapil 4</a>
                                 </div>
                             </div>
                             
