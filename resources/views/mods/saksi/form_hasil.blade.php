@@ -4,18 +4,24 @@
 
             @push('push-script')
                 <script>
-                    var value = $(this).val();
-                    // Memastikan bahwa nilai yang dimasukkan adalah angka
-                    if ($.isNumeric(value)) {
-                        // Memeriksa jika angka yang dimasukkan adalah 0 dan jika ada angka lain di sebelah kanan 0
-                        if (value.includes('0') && value.charAt(value.indexOf('0') + 1) !== '') {
-                            // Hapus karakter terakhir dari input
-                            $(this).val(value.slice(0, -1));
-                        }
-                    } else {
-                        // Jika nilai yang dimasukkan bukan angka, hapus karakter terakhir dari input
-                        $(this).val(value.slice(0, -1));
+                $('.angka').on('keydown', function(e) {
+                    var key = e.keyCode || e.which;
+
+                    // Mencegah penghapusan atau string kosong
+                    if ((key == 8 || key == 46) && $(this).val().length === 0) {
+                        e.preventDefault();
                     }
+
+                    // Hanya memperbolehkan angka dan tombol backspace/tab
+                    if ((key < 48 || key > 57) && key != 8 && key != 9) {
+                        e.preventDefault();
+                    }
+                    var value = $(this).val();
+                    if (value.length > 1 && value.charAt(0) === '0') {
+                        $(this).val(parseInt(value, 10));
+                    }
+
+                });
 
                     
                 </script>
@@ -30,20 +36,24 @@
                                 @php
                                     $img = asset('assets/images/partai/' . $item['logo']);
                                 @endphp
-                                <img src="{{$img}}" width="30" alt="" class="rounded avatar-sm">
+                                <img src="{{$img}}" alt="" class="rounded avatar-xs">
                                 {{$item['nama_partai']}}
                             </h5>
                         </div>
                         @foreach ($item['rekaps'] as $key2 => $item2)
                             <div class="my-2">
-                                <strong>{{$item2['calons']['no_urut']}}. {{$item2['calons']['nama']}}</strong>
+                                <strong class="text-dark">{{$item2['calons']['no_urut']}}. {{$item2['calons']['nama']}}</strong>
                                 <div class="input-group">
                                     <span class="input-group-btn input-group-prepend">
-                                        <button wire:click="onMinus({{$key}},{{$key2}},{{$item2['id']}})" class="btn btn-primary" type="button">-</button>
+                                        <button wire:click="onMinus({{$key}},{{$key2}},{{$item2['id']}})" class="btn btn-primary px-4" type="button">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
                                     </span>
-                                    <input data-toggle="touchspin" type="text" wire:model.live="list_partai.{{intval($key)}}.rekaps.{{intval($key2)}}.jumlah" class="form-control angka">
+                                    <input type="text" wire:model.live.debounce.5000ms="list_partai.{{intval($key)}}.rekaps.{{intval($key2)}}.jumlah" class="form-control angka">
                                     <span class="input-group-btn input-group-append">
-                                        <button wire:click="onPlus({{$key}},{{$key2}},{{$item2['id']}})" class="btn btn-primary" type="button">+</button>
+                                        <button wire:click="onPlus({{$key}},{{$key2}},{{$item2['id']}})" class="btn btn-primary px-4" type="button">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
                                     </span>
                                 </div>
                             </div>
@@ -61,23 +71,31 @@
                                 @php
                                     $img = asset('assets/images/partai/' . $item['logo']);
                                 @endphp
-                                <img src="{{$img}}" width="30" alt="" class="rounded avatar-sm">
+                                <img src="{{$img}}" class="rounded avatar-xs">
                                 {{$item['nama_partai']}}
                             </h5>
                         </div>
                         @foreach ($item['rekaps'] as $key2 => $item2)
-                            <div class="my-2">
-                                <strong>{{$item2['calons']['no_urut']}}. {{$item2['calons']['nama']}}</strong>
-                                <div class="input-group">
-                                    <span class="input-group-btn input-group-prepend">
-                                        <button wire:click="onMinus({{$key}},{{$key2}},{{$item2['id']}})" class="btn btn-primary" type="button">-</button>
-                                    </span>
-                                    <input data-toggle="touchspin" type="text" wire:model="list_partai.{{intval($key)}}.rekaps.{{intval($key2)}}.jumlah" class="form-control angka">
-                                    <span class="input-group-btn input-group-append">
-                                        <button wire:click="onPlus({{$key}},{{$key2}},{{$item2['id']}})" class="btn btn-primary" type="button">+</button>
-                                    </span>
+                            @if ($key2==0)
+
+                                <div class="my-2">
+                                    {{-- <strong class="text-dark">{{$item2['calons']['no_urut']}}. {{$item2['calons']['nama']}}</strong> --}}
+                                    <div class="input-group">
+                                        <span class="input-group-btn input-group-prepend">
+                                            <button wire:click="onMinus({{$key}},{{$key2}},{{$item2['id']}})" class="btn btn-primary px-4" type="button">
+                                                <i class="fas fa-minus"></i>
+                                            </button>
+                                        </span>
+                                        <input data-toggle="touchspin" type="text" wire:model="list_partai.{{intval($key)}}.rekaps.{{intval($key2)}}.jumlah" class="form-control angka">
+                                        <span class="input-group-btn input-group-append">
+                                            <button wire:click="onPlus({{$key}},{{$key2}},{{$item2['id']}})" class="btn btn-primary px-4" type="button">
+                                                <i class="fas fa-plus"></i>
+                                            </button>
+                                        </span>
+                                    </div>
                                 </div>
-                            </div>
+                                
+                            @endif
                         @endforeach
                         
                     @endif
