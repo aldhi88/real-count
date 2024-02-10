@@ -17,7 +17,7 @@
         dtTable.ajax.reload(); // Memuat ulang DataTable
     }
 
-    // setInterval(reloadDataTable, 2000); 
+    setInterval(reloadDataTable, 2000); 
 
     var dtTable = $('#myTable').DataTable({
         processing: false,serverSide: true,pageLength: 25,
