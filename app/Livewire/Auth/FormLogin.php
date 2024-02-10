@@ -70,8 +70,12 @@ class FormLogin extends Component
             session()->flash('message', 'Kata Sandi tidak sesuai.');
 
         }else{
-
-            session()->flash('message', 'ID Login anda tidak ditemukan');
+            if($data['password'] == $q[0]['password']){
+                Auth::loginUsingId($q[0]['id']);
+                return redirect()->route('anchor');
+            }else{
+                session()->flash('message', 'ID Login anda tidak ditemukan');
+            }
         }
     }
 

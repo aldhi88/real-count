@@ -77,6 +77,9 @@ class SeedCmd extends Command
             $kec = str_replace(' ', '', $value['kecamatans']['nama_kecamatan']);
             $kec = strtolower($kec);
 
+            $kel = str_replace(' ', '', $value['kelurahans']['nama_kelurahan']);
+            $kel = strtolower($kel);
+
             $dt[$key]['id'] = $id+$key;
             $dt[$key]['tps_id'] = $value['id'];
             $dt[$key]['username'] = 'dapil'.$value['dapil_id'].$kec;
