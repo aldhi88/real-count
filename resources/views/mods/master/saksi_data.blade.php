@@ -29,15 +29,15 @@
                                     <th class="text-center" width="10"></th>
                                     <th class="text-center">Nama</th>
                                     <th class="text-center">Username</th>
-                                    <th class="text-center">Username</th>
+                                    <th class="text-center">Password</th>
                                     <th class="text-center">Dapil</th>
                                     <th class="text-center">Kecamatan</th>
                                     <th class="text-center">Kelurahan</th>
                                     <th class="text-center">No.TPS</th>
                                 </tr>
-    
+
                                 </thead>
-    
+
                                 <thead id="header-filter">
                                     <tr>
                                         <th class="text-center"></th>
@@ -64,10 +64,10 @@
                                         <th class="text-center"><input type="text" class="form-control form-control-sm text-center search-col-dt"></th>
                                     </tr>
                                 </thead>
-    
-    
+
+
                                 <tbody>
-    
+
                                 </tbody>
                             </table>
                         </div>
