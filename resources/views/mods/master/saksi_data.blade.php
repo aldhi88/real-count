@@ -27,8 +27,9 @@
                                 <thead class="thead-light">
                                 <tr>
                                     <th class="text-center" width="10"></th>
-                                    <th class="text-center">Username</th>
                                     <th class="text-center">Nama</th>
+                                    <th class="text-center">Username</th>
+                                    <th class="text-center">Username</th>
                                     <th class="text-center">Dapil</th>
                                     <th class="text-center">Kecamatan</th>
                                     <th class="text-center">Kelurahan</th>
@@ -44,7 +45,22 @@
                                         <th class="text-center"><input type="text" class="form-control form-control-sm text-center search-col-dt"></th>
                                         <th class="text-center"><input type="text" class="form-control form-control-sm text-center search-col-dt"></th>
                                         <th class="text-center"><input type="text" class="form-control form-control-sm text-center search-col-dt"></th>
-                                        <th class="text-center"><input type="text" class="form-control form-control-sm text-center search-col-dt"></th>
+                                        <th class="text-center">
+                                            <select class="form-control form-control-sm search-col-dt">
+                                                <option value="">Filter per Kecamatan</option>
+                                                @foreach ($dtKec as $item)
+                                                    <option value="{{$item['id']}}">{{$item['nama_kecamatan']}}</option>
+                                                @endforeach
+                                            </select>
+                                        </th>
+                                        <th class="text-center">
+                                            <select id="select2-kelurahan" class="form-control form-control-sm search-col-dt">
+                                                <option value="">Filter per Kelurahan</option>
+                                                @foreach ($dtKel as $item)
+                                                    <option value="{{$item['id']}}">{{$item['nama_kelurahan']}}</option>
+                                                @endforeach
+                                            </select>
+                                        </th>
                                         <th class="text-center"><input type="text" class="form-control form-control-sm text-center search-col-dt"></th>
                                     </tr>
                                 </thead>

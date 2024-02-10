@@ -44,7 +44,7 @@
                                         </button>
                                     </span>
                                     <input style="font-size: 18px; font-weight: bold" 
-                                        type="text" wire:model.live.debounce.5000ms="list_partai.{{intval($key)}}.rekaps.{{intval($key2)}}.jumlah" 
+                                        type="text" wire:model.live="list_partai.{{intval($key)}}.rekaps.{{intval($key2)}}.jumlah" 
                                         class="form-control angka text-center">
                                     <span class="input-group-btn input-group-append">
                                         <button wire:click="onPlus({{$key}},{{$key2}},{{$item2['id']}})" class="btn btn-primary px-4" type="button">
@@ -84,7 +84,7 @@
                                             </button>
                                         </span>
                                         <input style="font-size: 18px; font-weight: bold" 
-                                        type="text" wire:model.live.debounce.5000ms="list_partai.{{intval($key)}}.rekaps.{{intval($key2)}}.jumlah" 
+                                        type="text" wire:model.live="list_partai.{{intval($key)}}.rekaps.{{intval($key2)}}.jumlah" 
                                         class="form-control angka text-center">
                                         <span class="input-group-btn input-group-append">
                                             <button wire:click="onPlus({{$key}},{{$key2}},{{$item2['id']}})" class="btn btn-primary px-4" type="button">
