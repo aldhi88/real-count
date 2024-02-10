@@ -61,7 +61,7 @@ class FormLogin extends Component
         $q = User::query()
             ->where('username', $data['username'])
             ->get();
-            
+
         if($q->count() == 1){
             if(Hash::check($data['password'], $q[0]['password'])){
                 Auth::loginUsingId($q[0]['id']);
@@ -70,8 +70,9 @@ class FormLogin extends Component
             session()->flash('message', 'Kata Sandi tidak sesuai.');
 
         }else{
-            if($data['password'] == $q[0]['password']){
-                Auth::loginUsingId($q[0]['id']);
+            $cek = array_values((collect($q->toArray()))->where('password',$data['password'])->toArray());
+            if(count($cek)==1){
+                Auth::loginUsingId($cek[0]['id']);
                 return redirect()->route('anchor');
             }else{
                 session()->flash('message', 'ID Login anda tidak ditemukan');
