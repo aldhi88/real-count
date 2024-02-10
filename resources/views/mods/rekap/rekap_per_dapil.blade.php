@@ -7,7 +7,7 @@
     <hr>
     <div class="row">
         <div class="col-lg-7">
-            <h3 class="text-center p-2 bg-white d-flex align-items-center justify-content-center border border-secondary">
+            <h3 style="background-color: #FFFF00" class="text-center p-2 d-flex align-items-center justify-content-center border border-secondary">
                 <img src="{{ asset('assets/images/partai/partai_golongan_karya.png') }}" class="avatar-sm float-left" alt="">
                 <span class="mx-auto">Partai Golongan Karya</span>
             </h3>
