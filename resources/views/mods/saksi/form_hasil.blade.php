@@ -33,6 +33,23 @@
                                 {{$item['nama_partai']}}
                             </h5>
                         </div>
+                        <div class="my-2">
+                            <strong class="text-dark">Suara Partai Golkar</strong>
+                            <div class="input-group">
+                                <span class="input-group-btn input-group-prepend">
+                                    <button class="btn btn-warning px-4 text-dark" type="button">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                </span>
+                                <input value="0" style="font-size: 18px; font-weight: bold" 
+                                    type="text" class="form-control angka text-center">
+                                <span class="input-group-btn input-group-append">
+                                    <button class="btn btn-warning px-4 text-dark" type="button">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
                         <hr class="my-0">
                         @foreach ($item['rekaps'] as $key2 => $item2)
                             <div class="my-2">
