@@ -53,8 +53,8 @@ services:
             retries: 3
             timeout: 5s
     phpmyadmin:
-    restart: always
         container_name: phpmyadmin-real-count
+        restart: always
         image: phpmyadmin:5.2.1-apache
         ports:
             - 903:80
