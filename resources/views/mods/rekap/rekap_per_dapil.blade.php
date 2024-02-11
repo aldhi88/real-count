@@ -6,7 +6,7 @@
     </div>
     <hr>
     <div class="row">
-        <div class="col-lg-7">
+        <div class="col-12">
             <h3 style="background-color: #FFFF00" class="text-center p-2 d-flex align-items-center justify-content-center border border-secondary">
                 <img src="{{ asset('assets/images/partai/partai_golongan_karya.png') }}" class="avatar-sm float-left" alt="">
                 <span class="mx-auto">Partai Golongan Karya</span>
@@ -59,21 +59,20 @@
 
                     <div class="dt-responsive table-responsive mt-2">
                         <div wire:ignore>
-                            {{-- <table id="myTable" class="table table-bordered table-striped dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                            <table id="myTable2" 
+                                class="table table-bordered table-striped dt-responsive nowrap text-dark" 
+                                style="border-collapse: collapse; border-spacing: 0; width: 100%;font-size: 22px">
                                 <thead class="thead-light">
                                 <tr>
                                     <th class="text-center" width="10"></th>
-                                    <th class="text-center">Nama Caleg</th>
-                                    <th class="text-center">Nama Partai</th>
-                                    <th class="text-center">Jumlah Suara</th>
+                                    <th class="text-center">NAMA PARTAI</th>
+                                    <th class="text-center">TOTAL SUARA</th>
                                 </tr>
     
                                 </thead>
     
-                                <tbody>
-    
-                                </tbody>
-                            </table> --}}
+                                <tbody></tbody>
+                            </table>
                         </div>
                     </div>
                 </div>

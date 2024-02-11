@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Calon;
+use App\Models\Partai;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use DataTables;
@@ -43,6 +44,37 @@ class RekapController extends Controller
                 return '<img src="' . $img . '" alt="" class="rounded avatar-lg">';
             })
             ->rawColumns(['logo_format'])
+            ->addIndexColumn()
+            ->toJson();
+    }
+
+    public function rekapPerDapilDt2(Request $request)
+    {
+        $data = Partai::select([
+                'partais.*'
+            ])
+            ->where('id', '!=', 8)
+            ->withCount([
+                'rekaps as total_suara' => function($q) use($request){
+                    $q->select(DB::raw('SUM(jumlah)'))
+                        ->where('dapil_id',$request->dapilId);
+                }
+            ])
+        ;
+        
+        // dd($data->get()->toArray());
+
+
+        // if(isset($request->dapilId)){
+        //     $data->where('dapil_id',$request->dapilId);
+        // }
+        
+        return DataTables::of($data)
+            // ->addColumn('logo_format', function ($data) {
+            //     $img = asset('assets/images/partai/' . $data->logo);
+            //     return '<img src="' . $img . '" alt="" class="rounded avatar-lg">';
+            // })
+            // ->rawColumns(['logo_format'])
             ->addIndexColumn()
             ->toJson();
     }

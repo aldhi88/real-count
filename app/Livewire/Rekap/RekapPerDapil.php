@@ -16,11 +16,7 @@ class RekapPerDapil extends Component
     {
         $this->dapilId = $data['dapil'];
         $this->title = $data['title'];
-        // $this->dtRekap = Dapil::where('id',$data)
-        //     ->get()
-        //     ->toArray();
-
-        // dd($this->all());
+        
         
     }
 

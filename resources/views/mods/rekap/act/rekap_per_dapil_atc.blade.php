@@ -15,6 +15,7 @@
 
     function reloadDataTable() {
         dtTable.ajax.reload(); // Memuat ulang DataTable
+        dtTable2.ajax.reload(); // Memuat ulang DataTable
     }
 
     setInterval(reloadDataTable, 2000); 
@@ -42,6 +43,38 @@
             { data: 'total_suara', name: 'total_suara', orderable: false, searchable:false,render: function(data, type, row) {
                 return data.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
             } },
+        ],
+        initComplete: function(settings){
+            // table = settings.oInstance.api();
+            // initSearchCol(table,'#header-filter','search-col-dt');
+        }
+    });
+
+    var dtTable2 = $('#myTable2').DataTable({
+        processing: false,serverSide: true,pageLength: 25,
+        searching: false, 
+        lengthChange: false,
+        paging: false,
+        info: false,
+        order: [[0, 'asc']],
+        columnDefs: [
+            { className: 'text-center', targets: [0,2] },
+        ],
+        ajax: {
+            url: '{{ route("rekap.rekapPerDapilDt2") }}',
+            data: function(d){ 
+                d.dapilId = {{$dapilId}};
+            }
+        },
+        columns: [
+            { data: 'id', name: 'id', orderable: true, searchable:false },
+            { data: 'nama_partai', name: 'nama_partai', orderable: false, searchable:false },
+            { data: 'total_suara', name: 'total_suara', orderable: false, searchable:false },
+
+            // { data: 'partais.nama_partai', name: 'partais.nama_partai', orderable: true, searchable:true },
+            // { data: 'total_suara', name: 'total_suara', orderable: false, searchable:false,render: function(data, type, row) {
+            //     return data.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+            // } },
         ],
         initComplete: function(settings){
             // table = settings.oInstance.api();
