@@ -12,6 +12,8 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use DataTables;
 
+use function PHPUnit\Framework\isNull;
+
 class MasterController extends Controller
 {
     public function partaiData()
@@ -43,7 +45,8 @@ class MasterController extends Controller
     public function calonDataDt()
     {
         $data = Calon::select('calons.*')
-            ->with(['partais', 'dapils']);
+            ->with(['partais', 'dapils'])
+            ->where('no_urut', '!=',0);
         return DataTables::of($data)
             ->addIndexColumn()
             ->smart(false)
@@ -137,11 +140,30 @@ class MasterController extends Controller
             ])
         ;
         return DataTables::of($data)
-            // ->addColumn('logo_format', function ($data) {
-            //     $img = asset('assets/images/partai/' . $data->logo);
-            //     return '<img src="' . $img . '" alt="" class="rounded avatar-lg">';
-            // })
-            // ->rawColumns(['logo_format'])
+            ->addColumn('status_kirim_format', function($data){
+                if($data->status_kirim==0){
+                    return '<h5 style="cursor: pointer" class="status-kirim mb-0" key="'.$data->id.'" value="'.$data->status_kirim.'"><span class="w-100 badge badge-secondary">Belum Dikirim</span></h5>';
+                }else{
+                    return '<h5 style="cursor: pointer" class="status-kirim mb-0" key="'.$data->id.'" value="'.$data->status_kirim.'"><span class="w-100 badge badge-success">Sudah Dikirim</span></h5>';
+                }
+            })
+            ->addColumn('status_terima_format', function($data){
+                if($data->status_terima==0){
+                    return '<h5 style="cursor: pointer" class="status-terima mb-0" key="'.$data->id.'" value="'.$data->status_terima.'"><span class="w-100 badge badge-secondary">Belum Diterima</span></h5>';
+                }else{
+                    return '<h5 style="cursor: pointer" class="status-terima mb-0" key="'.$data->id.'" value="'.$data->status_terima.'"><span class="w-100 badge badge-success">Sudah Diterima</span></h5>';
+                }
+            })
+            ->addColumn('nama_format', function ($data) {
+                return '<input class="input-nama" type="text" value="'.$data->nama.'" key="'.$data->id.'">';
+            })
+            ->addColumn('hp_format', function ($data) {
+                return '<input class="input-hp" type="text" value="'.$data->hp.'" key="'.$data->id.'">';
+            })
+            ->addColumn('hp_wa', function ($data) {
+                return '<a target="_blank" class="btn btn-success btn-sm" href="https://wa.me/'.$data->hp.'"><i class="fab fa-whatsapp"></i></a>';
+            })
+            ->rawColumns(['status_kirim_format','status_terima_format','hp_format','hp_wa','nama_format'])
             ->addIndexColumn()
             ->smart(false)
             ->toJson();

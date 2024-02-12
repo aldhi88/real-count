@@ -15185,155 +15185,43 @@ File: Icons Css File
 .mdi-light.mdi-inactive:before {
   color: rgba(255, 255, 255, 0.3); }
 
-.mdi-rotate-45 {
-  /*
-        // Not included in production
-        &.mdi-flip-h:before {
-            -webkit-transform: scaleX(-1) rotate(45deg);
-            transform: scaleX(-1) rotate(45deg);
-            filter: FlipH;
-            -ms-filter: "FlipH";
-        }
-        &.mdi-flip-v:before {
-            -webkit-transform: scaleY(-1) rotate(45deg);
-            -ms-transform: rotate(45deg);
-            transform: scaleY(-1) rotate(45deg);
-            filter: FlipV;
-            -ms-filter: "FlipV";
-        }
-        */ }
+
 
 .mdi-rotate-45:before {
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg); }
 
-.mdi-rotate-90 {
-  /*
-        // Not included in production
-        &.mdi-flip-h:before {
-            -webkit-transform: scaleX(-1) rotate(90deg);
-            transform: scaleX(-1) rotate(90deg);
-            filter: FlipH;
-            -ms-filter: "FlipH";
-        }
-        &.mdi-flip-v:before {
-            -webkit-transform: scaleY(-1) rotate(90deg);
-            -ms-transform: rotate(90deg);
-            transform: scaleY(-1) rotate(90deg);
-            filter: FlipV;
-            -ms-filter: "FlipV";
-        }
-        */ }
+
 
 .mdi-rotate-90:before {
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg); }
 
-.mdi-rotate-135 {
-  /*
-        // Not included in production
-        &.mdi-flip-h:before {
-            -webkit-transform: scaleX(-1) rotate(135deg);
-            transform: scaleX(-1) rotate(135deg);
-            filter: FlipH;
-            -ms-filter: "FlipH";
-        }
-        &.mdi-flip-v:before {
-            -webkit-transform: scaleY(-1) rotate(135deg);
-            -ms-transform: rotate(135deg);
-            transform: scaleY(-1) rotate(135deg);
-            filter: FlipV;
-            -ms-filter: "FlipV";
-        }
-        */ }
+
 
 .mdi-rotate-135:before {
   -webkit-transform: rotate(135deg);
   transform: rotate(135deg); }
 
-.mdi-rotate-180 {
-  /*
-        // Not included in production
-        &.mdi-flip-h:before {
-            -webkit-transform: scaleX(-1) rotate(180deg);
-            transform: scaleX(-1) rotate(180deg);
-            filter: FlipH;
-            -ms-filter: "FlipH";
-        }
-        &.mdi-flip-v:before {
-            -webkit-transform: scaleY(-1) rotate(180deg);
-            -ms-transform: rotate(180deg);
-            transform: scaleY(-1) rotate(180deg);
-            filter: FlipV;
-            -ms-filter: "FlipV";
-        }
-        */ }
+
 
 .mdi-rotate-180:before {
   -webkit-transform: rotate(180deg);
   transform: rotate(180deg); }
 
-.mdi-rotate-225 {
-  /*
-        // Not included in production
-        &.mdi-flip-h:before {
-            -webkit-transform: scaleX(-1) rotate(225deg);
-            transform: scaleX(-1) rotate(225deg);
-            filter: FlipH;
-            -ms-filter: "FlipH";
-        }
-        &.mdi-flip-v:before {
-            -webkit-transform: scaleY(-1) rotate(225deg);
-            -ms-transform: rotate(225deg);
-            transform: scaleY(-1) rotate(225deg);
-            filter: FlipV;
-            -ms-filter: "FlipV";
-        }
-        */ }
+
 
 .mdi-rotate-225:before {
   -webkit-transform: rotate(225deg);
   transform: rotate(225deg); }
 
-.mdi-rotate-270 {
-  /*
-        // Not included in production
-        &.mdi-flip-h:before {
-            -webkit-transform: scaleX(-1) rotate(270deg);
-            transform: scaleX(-1) rotate(270deg);
-            filter: FlipH;
-            -ms-filter: "FlipH";
-        }
-        &.mdi-flip-v:before {
-            -webkit-transform: scaleY(-1) rotate(270deg);
-            -ms-transform: rotate(270deg);
-            transform: scaleY(-1) rotate(270deg);
-            filter: FlipV;
-            -ms-filter: "FlipV";
-        }
-        */ }
+
 
 .mdi-rotate-270:before {
   -webkit-transform: rotate(270deg);
   transform: rotate(270deg); }
 
-.mdi-rotate-315 {
-  /*
-        // Not included in production
-        &.mdi-flip-h:before {
-            -webkit-transform: scaleX(-1) rotate(315deg);
-            transform: scaleX(-1) rotate(315deg);
-            filter: FlipH;
-            -ms-filter: "FlipH";
-        }
-        &.mdi-flip-v:before {
-            -webkit-transform: scaleY(-1) rotate(315deg);
-            -ms-transform: rotate(315deg);
-            transform: scaleY(-1) rotate(315deg);
-            filter: FlipV;
-            -ms-filter: "FlipV";
-        }
-        */ }
+
 
 .mdi-rotate-315:before {
   -webkit-transform: rotate(315deg);
@@ -15503,31 +15391,37 @@ File: Icons Css File
 
 .fa-rotate-90 {
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
+  filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg); }
 
 .fa-rotate-180 {
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
+  filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
   -webkit-transform: rotate(180deg);
   transform: rotate(180deg); }
 
 .fa-rotate-270 {
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";
+  filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";
   -webkit-transform: rotate(270deg);
   transform: rotate(270deg); }
 
 .fa-flip-horizontal {
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
+  filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
   -webkit-transform: scale(-1, 1);
   transform: scale(-1, 1); }
 
 .fa-flip-vertical {
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
+  filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
   -webkit-transform: scale(1, -1);
   transform: scale(1, -1); }
 
 .fa-flip-both, .fa-flip-horizontal.fa-flip-vertical {
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
+  filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
   -webkit-transform: scale(-1, -1);
   transform: scale(-1, -1); }
 
@@ -19949,7 +19843,6 @@ readers do not read off random characters that represent icons */
   font-weight: normal !important;
   font-variant: normal !important;
   text-transform: none !important;
-  speak: none;
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
@@ -19961,7 +19854,6 @@ readers do not read off random characters that represent icons */
   font-weight: normal !important;
   font-variant: normal !important;
   text-transform: none !important;
-  speak: none;
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }

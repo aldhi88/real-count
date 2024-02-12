@@ -34,6 +34,10 @@
                                     <th class="text-center">Kecamatan</th>
                                     <th class="text-center">Kelurahan</th>
                                     <th class="text-center">No.TPS</th>
+                                    <th class="text-center">No.HP</th>
+                                    <th class="text-center">Link<br>WA</th>
+                                    <th class="text-center">Status Kirim</th>
+                                    <th class="text-center">Status Deterima</th>
                                 </tr>
 
                                 </thead>
@@ -54,7 +58,7 @@
                                             </select>
                                         </th>
                                         <th class="text-center">
-                                            <select id="select2-kelurahan" class="form-control form-control-sm search-col-dt">
+                                            <select id="select2-kelurahan" class="w-100 form-control form-control-sm search-col-dt">
                                                 <option value="">Filter per Kelurahan</option>
                                                 @foreach ($dtKel as $item)
                                                     <option value="{{$item['id']}}">{{$item['nama_kelurahan']}}</option>
@@ -62,6 +66,22 @@
                                             </select>
                                         </th>
                                         <th class="text-center"><input type="text" class="form-control form-control-sm text-center search-col-dt"></th>
+                                        <th class="text-center"><input type="text" class="form-control form-control-sm text-center search-col-dt"></th>
+                                        <th class="text-center" width="10"></th>
+                                        <th class="text-center">
+                                            <select class="form-control form-control-sm search-col-dt">
+                                                <option value="">Filter per Status Kirim</option>
+                                                <option value="0">Belum Dikirim</option>
+                                                <option value="1">Sudah Dikirim</option>
+                                            </select>
+                                        </th>
+                                        <th class="text-center">
+                                            <select class="form-control form-control-sm search-col-dt">
+                                                <option value="">Filter per Status Terima</option>
+                                                <option value="0">Belum Diterima</option>
+                                                <option value="1">Sudah Diterima</option>
+                                            </select>
+                                        </th>
                                     </tr>
                                 </thead>
 

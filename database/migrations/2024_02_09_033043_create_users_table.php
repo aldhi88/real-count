@@ -17,6 +17,9 @@ return new class extends Migration
             $table->string('username', 32);
             $table->string('password');
             $table->string('nama');
+            $table->string('hp')->nullable();
+            $table->boolean('status_kirim')->default(0);
+            $table->boolean('status_terima')->default(0);
             $table->timestamps();
             $table->softDeletes();
         });
