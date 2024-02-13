@@ -101,8 +101,12 @@
 
             $('table').on('change', 'input.input-hp', function() {
                 var newValue = $(this).val();
+                var user = $(this).attr('user');
+                var pass = $(this).attr('pass');
                 var id = $(this).attr('key');
                 @this.dispatch('saksidata-hp',{data:{'hp':newValue,'id':id}});
+                var link = `https://wa.me/`+newValue+`?text=https%3A%2F%2Frc.byfta.com%0A%0A`+user+`%0A`+pass+`%0A%0Abalas%20OK%20jika%20sudah%20menerima`;
+                $('table a.btn-wa').find('#'+id).attr('href',);
             });
 
             $('table').on('change', 'input.input-nama', function() {

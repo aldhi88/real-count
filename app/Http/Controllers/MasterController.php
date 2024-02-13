@@ -158,10 +158,10 @@ class MasterController extends Controller
                 return '<input class="input-nama" type="text" value="'.$data->nama.'" key="'.$data->id.'">';
             })
             ->addColumn('hp_format', function ($data) {
-                return '<input class="input-hp" type="text" value="'.$data->hp.'" key="'.$data->id.'">';
+                return '<input user="'.$data->username.'" pass="'.$data->password.'" class="input-hp" type="text" value="'.$data->hp.'" key="'.$data->id.'">';
             })
             ->addColumn('hp_wa', function ($data) {
-                return '<a target="_blank" class="btn btn-success btn-sm" href="https://wa.me/'.$data->hp.'"><i class="fab fa-whatsapp"></i></a>';
+                return '<a target="_blank" class="btn btn-success btn-sm btn-wa" id="'.$data->id.'" href="https://wa.me/6282361654576?text=https%3A%2F%2Frc.byfta.com%0A%0A'.$data->username.'%0A'.$data->password.'%0A%0Abalas%20OK%20jika%20sudah%20menerima"><i class="fab fa-whatsapp"></i></a>';
             })
             ->rawColumns(['status_kirim_format','status_terima_format','hp_format','hp_wa','nama_format'])
             ->addIndexColumn()
