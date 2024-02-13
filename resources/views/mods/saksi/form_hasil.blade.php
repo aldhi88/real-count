@@ -33,43 +33,48 @@
                                 {{$item['nama_partai']}}
                             </h5>
                         </div>
-                        <div class="my-2">
-                            <strong class="text-dark">Suara Partai Golkar</strong>
-                            <div class="input-group">
-                                <span class="input-group-btn input-group-prepend">
-                                    <button class="btn btn-warning px-4 text-dark" type="button">
-                                        <i class="fas fa-minus"></i>
-                                    </button>
-                                </span>
-                                <input value="0" style="font-size: 18px; font-weight: bold" 
-                                    type="text" class="form-control angka text-center">
-                                <span class="input-group-btn input-group-append">
-                                    <button class="btn btn-warning px-4 text-dark" type="button">
-                                        <i class="fas fa-plus"></i>
-                                    </button>
-                                </span>
-                            </div>
-                        </div>
-                        <hr class="my-0">
+                        
                         @foreach ($item['rekaps'] as $key2 => $item2)
-                            <div class="my-2">
-                                <strong class="text-dark">{{$item2['calons']['no_urut']}}. {{$item2['calons']['nama']}}</strong>
-                                <div class="input-group">
-                                    <span class="input-group-btn input-group-prepend">
-                                        <button wire:click="onMinus({{$key}},{{$key2}},{{$item2['id']}})" class="btn btn-primary px-4" type="button">
-                                            <i class="fas fa-minus"></i>
-                                        </button>
-                                    </span>
-                                    <input style="font-size: 18px; font-weight: bold" 
-                                        type="text" wire:model.live="list_partai.{{intval($key)}}.rekaps.{{intval($key2)}}.jumlah" 
-                                        class="form-control angka text-center">
-                                    <span class="input-group-btn input-group-append">
-                                        <button wire:click="onPlus({{$key}},{{$key2}},{{$item2['id']}})" class="btn btn-primary px-4" type="button">
-                                            <i class="fas fa-plus"></i>
-                                        </button>
-                                    </span>
+                            @if ($item2['calons']['no_urut'] == 0)
+                                <div class="my-2">
+                                    <strong class="text-dark">SUARA PARTAI GOLKAR</strong>
+                                    <div class="input-group">
+                                        <span class="input-group-btn input-group-prepend">
+                                            <button wire:click="onMinus({{$key}},{{$key2}},{{$item2['id']}})" class="btn btn-warning px-4 text-dark" type="button">
+                                                <i class="fas fa-minus"></i>
+                                            </button>
+                                        </span>
+                                        <input wire:model.live="list_partai.{{intval($key)}}.rekaps.{{intval($key2)}}.jumlah" style="font-size: 18px; font-weight: bold" 
+                                            type="text" class="form-control angka text-center">
+                                        <span class="input-group-btn input-group-append">
+                                            <button wire:click="onPlus({{$key}},{{$key2}},{{$item2['id']}})" class="btn btn-warning px-4 text-dark" type="button">
+                                                <i class="fas fa-plus"></i>
+                                            </button>
+                                        </span>
+                                    </div>
                                 </div>
-                            </div>
+                                <hr>
+                            @else
+                                <div class="my-2">
+                                    <strong class="text-dark">{{$item2['calons']['no_urut']}}. {{$item2['calons']['nama']}}</strong>
+                                    <div class="input-group">
+                                        <span class="input-group-btn input-group-prepend">
+                                            <button wire:click="onMinus({{$key}},{{$key2}},{{$item2['id']}})" class="btn btn-primary px-4" type="button">
+                                                <i class="fas fa-minus"></i>
+                                            </button>
+                                        </span>
+                                        <input style="font-size: 18px; font-weight: bold" 
+                                            type="text" wire:model.live="list_partai.{{intval($key)}}.rekaps.{{intval($key2)}}.jumlah" 
+                                            class="form-control angka text-center">
+                                        <span class="input-group-btn input-group-append">
+                                            <button wire:click="onPlus({{$key}},{{$key2}},{{$item2['id']}})" class="btn btn-primary px-4" type="button">
+                                                <i class="fas fa-plus"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                            @endif
+
                         @endforeach
                         
                     @endif

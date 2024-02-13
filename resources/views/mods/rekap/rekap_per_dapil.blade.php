@@ -1,16 +1,16 @@
 <div>
-    <div class="row mt-3">
+    <div class="row mt-2">
         <div class="col">
-            <h2 class="text-center">{{strtoupper($title)}}</h2>
+            <h3 class="text-center m-1">{{$title}}</h3>
         </div>
     </div>
     <hr>
     <div class="row">
         <div class="col-12">
-            <h3 style="background-color: #FFFF00" class="text-center p-2 d-flex align-items-center justify-content-center border border-secondary">
-                <img src="{{ asset('assets/images/partai/partai_golongan_karya.png') }}" class="avatar-sm float-left" alt="">
+            <h4 style="background-color: #FFFF00" class="text-center p-1 d-flex align-items-center justify-content-center border border-secondary">
+                <img src="{{ asset('assets/images/partai/partai_golongan_karya.png') }}" class="avatar-xs float-left" alt="">
                 <span class="mx-auto">Partai Golongan Karya</span>
-            </h3>
+            </h4>
             {{-- <h3 class="text-center p-2" style="background-color: #FFFF00">Partai Golongan Karya</h3> --}}
             <div class="card">
                 <div class="card-body">
@@ -50,10 +50,10 @@
             </div>
         </div>
         <div class="col">
-            <h3 class="text-center p-2 bg-white d-flex align-items-center justify-content-center border border-secondary">
+            <h4 class="text-center p-0 bg-white d-flex align-items-center justify-content-center border border-secondary">
                 <img src="{{ asset('assets/images/partai/partai_golongan_karya.png') }}" class="avatar-sm float-left invisible" alt="">
                 <span class="mx-auto">Partai Lainnya</span>
-            </h3>
+            </h4>
             <div class="card">
                 <div class="card-body">
 

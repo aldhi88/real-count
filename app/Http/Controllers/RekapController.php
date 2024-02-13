@@ -13,7 +13,7 @@ class RekapController extends Controller
     public function rekapPerDapil($dapilId)
     {
         $data['page'] = 'rekap_per_dapil';
-        $data['title'] = "Rekap Data Per Dapil ".$dapilId;
+        $data['title'] = "REKAP PER DAPIL ".$dapilId;
         $data['dapil'] = $dapilId;
         return view('mods.rekap.index', compact('data'));
     }

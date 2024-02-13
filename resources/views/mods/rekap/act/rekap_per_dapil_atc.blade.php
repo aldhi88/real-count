@@ -2,6 +2,14 @@
         <link href="{{ asset('assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
 @endsection
 
+@push('push-style')
+<style>
+    .table td, .table th{
+        padding: 5px !important;
+    }
+</style>
+@endpush
+
 @section('script')
 
     <script src="{{ asset('assets/libs/datatables.net/js/jquery.dataTables.min.js') }}"></script>
@@ -18,7 +26,7 @@
         dtTable2.ajax.reload(); // Memuat ulang DataTable
     }
 
-    setInterval(reloadDataTable, 2000); 
+    // setInterval(reloadDataTable, 2000); 
 
     var dtTable = $('#myTable').DataTable({
         processing: false,serverSide: true,pageLength: 25,
