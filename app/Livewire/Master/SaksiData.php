@@ -7,6 +7,7 @@ use App\Models\Kelurahan;
 use App\Models\User;
 use Livewire\Attributes\On;
 use Livewire\Component;
+use Illuminate\Support\Str;
 
 class SaksiData extends Component
 {
@@ -53,5 +54,11 @@ class SaksiData extends Component
         }else{
             User::find($data['id'])->update(['status_terima'=>0]);
         }
+    }
+
+    #[On('saksidata-resetPass')]
+    public function resetPass($data)
+    {
+        User::find($data['id'])->update(['password'=>$data['pass']]);
     }
 }

@@ -51,7 +51,7 @@
             { data: 'hp_wa', name: 'hp', orderable: false, searchable:false },
             { data: 'status_kirim_format', name: 'status_kirim', orderable: false, searchable:true },
             { data: 'username', name: 'username', orderable: true, searchable:true },
-            { data: 'password', name: 'password', orderable: true, searchable:true },
+            { data: 'pass_format', name: 'password', orderable: true, searchable:true },
             { data: 'tps.dapils.no_dapil', name: 'tps.dapils.no_dapil', orderable: true, searchable:true },
             { data: 'tps.kecamatans.nama_kecamatan', name: 'tps.kecamatan_id', orderable: true, searchable:true },
             { data: 'tps.kelurahans.nama_kelurahan', name: 'tps.kelurahan_id', orderable: true, searchable:true },
@@ -115,9 +115,24 @@
                 var id = $(this).attr('key');
                 @this.dispatch('saksidata-nama',{data:{'nama':newValue,'id':id}});
             });
+
+            $('table').on('click', 'button.reset-pass', function() {
+                var id = $(this).attr('key');
+                var pass = $(this).attr('pass');
+                var rand = $(this).attr('newpass');
+                var newpass = pass.slice(0, -5) + rand;
+                if (confirm('Yakin') == true) {
+                    @this.dispatch('saksidata-resetPass',{data:{'id':id,'pass':newpass}});
+                    $('table div').find('div#'+id).text(newpass);
+                } else {
+                    return false;
+                }
+                
+            });
         }
     });
 
     </script>
 
 @endsection
+

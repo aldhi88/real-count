@@ -10,6 +10,7 @@ use App\Models\Partai;
 use App\Models\Tps;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use DataTables;
 
 use function PHPUnit\Framework\isNull;
@@ -140,6 +141,14 @@ class MasterController extends Controller
             ])
         ;
         return DataTables::of($data)
+            
+            ->addColumn('pass_format', function($data){
+                $el = '<button class="btn btn-sm btn-danger reset-pass" key="'.$data->id.'" pass="'.$data->password.'" newpass="'.Str::random(5).'">
+                        <i class="fas fa-key"></i>
+                    </button>';
+                $pass = '<div class="text-left mr-2 string-pass" id="'.$data->id.'">'.$data->password.'</div>';
+                return '<div class="d-flex justify-content-between align-items-center">'.$pass.$el.'</div>';
+            })
             ->addColumn('status_kirim_format', function($data){
                 if($data->status_kirim==0){
                     return '<h5 style="cursor: pointer" class="status-kirim mb-0" key="'.$data->id.'" value="'.$data->status_kirim.'"><span class="w-100 badge badge-secondary">Belum Dikirim</span></h5>';
@@ -163,7 +172,7 @@ class MasterController extends Controller
             ->addColumn('hp_wa', function ($data) {
                 return '<a target="_blank" class="btn btn-success btn-sm btn-wa" id="'.$data->id.'" href="https://wa.me/'.$data->hp.'?text=https%3A%2F%2Frc.byfta.com%0A%0A'.$data->username.'%0A'.$data->password.'%0A%0Abalas%20OK%20jika%20sudah%20menerima"><i class="fab fa-whatsapp"></i></a>';
             })
-            ->rawColumns(['status_kirim_format','status_terima_format','hp_format','hp_wa','nama_format','login_at_format'])
+            ->rawColumns(['pass_format','status_kirim_format','status_terima_format','hp_format','hp_wa','nama_format','login_at_format'])
             ->addIndexColumn()
             ->smart(false)
             ->toJson();
