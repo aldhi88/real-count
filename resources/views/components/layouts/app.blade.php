@@ -25,13 +25,6 @@
         @livewireStyles
         <script>
             function initSearchCol(table,headerId,inputClass){
-                // $(headerId+' th').each(function() {
-                //     var title = $(this).text();
-                //     var off = $(this).attr("off");
-                //     if (typeof off == typeof undefined) {
-                //         $(this).html('<input placeholder="'+title+'" type="text" class="'+inputClass+' text-center border border-light-dark py-1 w-100"/>');
-                //     }
-                // });
 
                 $(headerId).on('keyup', '.'+inputClass,function () {
                     table.column( $(this).parent().index() ).search( this.value ).draw();

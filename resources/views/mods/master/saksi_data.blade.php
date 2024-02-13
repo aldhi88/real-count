@@ -28,16 +28,16 @@
                                 <tr>
                                     <th class="text-center" width="10"></th>
                                     <th class="text-center">Nama</th>
+                                    <th class="text-center">No.HP</th>
+                                    <th class="text-center">Link<br>WA</th>
+                                    <th class="text-center">Status Kirim</th>
                                     <th class="text-center">Username</th>
                                     <th class="text-center">Password</th>
                                     <th class="text-center">Dapil</th>
                                     <th class="text-center">Kecamatan</th>
                                     <th class="text-center">Kelurahan</th>
                                     <th class="text-center">No.TPS</th>
-                                    <th class="text-center">No.HP</th>
-                                    <th class="text-center">Link<br>WA</th>
-                                    <th class="text-center">Status Kirim</th>
-                                    <th class="text-center">Status Deterima</th>
+                                    <th class="text-center">Status Diterima</th>
                                     <th class="text-center">Login Terakhir</th>
                                 </tr>
 
@@ -47,6 +47,15 @@
                                     <tr>
                                         <th class="text-center"></th>
                                         <th class="text-center"><input type="text" class="form-control form-control-sm text-center search-col-dt"></th>
+                                        <th class="text-center"><input type="text" class="form-control form-control-sm text-center search-col-dt"></th>
+                                        <th class="text-center" width="10"></th>
+                                        <th class="text-center">
+                                            <select class="form-control form-control-sm search-col-dt">
+                                                <option value="">Filter per Status Kirim</option>
+                                                <option value="0">Belum Dikirim</option>
+                                                <option value="1">Sudah Dikirim</option>
+                                            </select>
+                                        </th>
                                         <th class="text-center"><input type="text" class="form-control form-control-sm text-center search-col-dt"></th>
                                         <th class="text-center"><input type="text" class="form-control form-control-sm text-center search-col-dt"></th>
                                         <th class="text-center"><input type="text" class="form-control form-control-sm text-center search-col-dt"></th>
@@ -67,15 +76,6 @@
                                             </select>
                                         </th>
                                         <th class="text-center"><input type="text" class="form-control form-control-sm text-center search-col-dt"></th>
-                                        <th class="text-center"><input type="text" class="form-control form-control-sm text-center search-col-dt"></th>
-                                        <th class="text-center" width="10"></th>
-                                        <th class="text-center">
-                                            <select class="form-control form-control-sm search-col-dt">
-                                                <option value="">Filter per Status Kirim</option>
-                                                <option value="0">Belum Dikirim</option>
-                                                <option value="1">Sudah Dikirim</option>
-                                            </select>
-                                        </th>
                                         <th class="text-center">
                                             <select class="form-control form-control-sm search-col-dt">
                                                 <option value="">Filter per Status Terima</option>

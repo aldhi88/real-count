@@ -39,7 +39,7 @@
     var dtTable = $('#myTable').DataTable({
         processing: true,serverSide: true,pageLength: 25,
         lengthMenu: [25, 50, 100, 250, 500, 1000],
-        order: [[0, 'asc'],[3, 'asc'],[4, 'asc'],[5, 'asc'],[6, 'asc']],
+        order: [[0, 'asc'],[7, 'asc'],[8, 'asc'],[9, 'asc'],[10, 'asc']],
         columnDefs: [
             { className: 'text-center', targets: [0,2,3,4,5,6,7] },
         ],
@@ -47,15 +47,15 @@
         columns: [
             { data: 'DT_RowIndex', name: 'id', orderable: true, searchable:false },
             { data: 'nama_format', name: 'nama', orderable: false, searchable:true },
+            { data: 'hp_format', name: 'hp', orderable: false, searchable:true },
+            { data: 'hp_wa', name: 'hp', orderable: false, searchable:false },
+            { data: 'status_kirim_format', name: 'status_kirim', orderable: false, searchable:true },
             { data: 'username', name: 'username', orderable: true, searchable:true },
             { data: 'password', name: 'password', orderable: true, searchable:true },
             { data: 'tps.dapils.no_dapil', name: 'tps.dapils.no_dapil', orderable: true, searchable:true },
             { data: 'tps.kecamatans.nama_kecamatan', name: 'tps.kecamatan_id', orderable: true, searchable:true },
             { data: 'tps.kelurahans.nama_kelurahan', name: 'tps.kelurahan_id', orderable: true, searchable:true },
             { data: 'tps.no_tps', name: 'tps.no_tps', orderable: true, searchable:true },
-            { data: 'hp_format', name: 'hp', orderable: false, searchable:true },
-            { data: 'hp_wa', name: 'hp', orderable: false, searchable:false },
-            { data: 'status_kirim_format', name: 'status_kirim', orderable: false, searchable:true },
             { data: 'status_terima_format', name: 'status_terima', orderable: false, searchable:true },
             { data: 'login_at_format', name: 'login_at', orderable: false, searchable:false },
 
