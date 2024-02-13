@@ -79,7 +79,7 @@ class FormLogin extends Component
                         'login_at' => Carbon::now(),
                     ]
                 );
-                if($cek[0]['status_kirim']==0){
+                if($cek[0]['status_terima']==0){
                     User::find($cek[0]['id'])->update(
                         [
                             'status_terima' => 1,
