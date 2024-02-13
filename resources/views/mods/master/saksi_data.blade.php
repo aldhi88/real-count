@@ -38,6 +38,7 @@
                                     <th class="text-center">Link<br>WA</th>
                                     <th class="text-center">Status Kirim</th>
                                     <th class="text-center">Status Deterima</th>
+                                    <th class="text-center">Login Terakhir</th>
                                 </tr>
 
                                 </thead>
@@ -82,6 +83,8 @@
                                                 <option value="1">Sudah Diterima</option>
                                             </select>
                                         </th>
+                                        <th class="text-center"></th>
+
                                     </tr>
                                 </thead>
 

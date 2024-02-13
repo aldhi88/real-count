@@ -5,6 +5,7 @@ namespace App\Livewire\Auth;
 use App\Models\Dapil;
 use App\Models\Tps;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -73,6 +74,19 @@ class FormLogin extends Component
             $cek = array_values((collect($q->toArray()))->where('password',$data['password'])->toArray());
             if(count($cek)==1){
                 Auth::loginUsingId($cek[0]['id']);
+                User::find($cek[0]['id'])->update(
+                    [
+                        'login_at' => Carbon::now(),
+                    ]
+                );
+                if($cek[0]['status_kirim']==0){
+                    User::find($cek[0]['id'])->update(
+                        [
+                            'status_terima' => 1,
+                        ]
+                    );
+                }
+
                 return redirect()->route('anchor');
             }else{
                 session()->flash('message', 'ID Login anda tidak ditemukan');

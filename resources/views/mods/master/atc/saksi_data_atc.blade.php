@@ -57,6 +57,7 @@
             { data: 'hp_wa', name: 'hp', orderable: false, searchable:false },
             { data: 'status_kirim_format', name: 'status_kirim', orderable: false, searchable:true },
             { data: 'status_terima_format', name: 'status_terima', orderable: false, searchable:true },
+            { data: 'login_at_format', name: 'login_at', orderable: false, searchable:false },
 
         ],
         initComplete: function(settings){

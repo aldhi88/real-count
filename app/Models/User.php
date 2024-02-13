@@ -5,6 +5,7 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 // use Illuminate\Database\Eloquent\Factories\HasFactory;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -16,6 +17,16 @@ class User extends Authenticatable
 {
     use SoftDeletes;
     protected $guarded = [];
+    protected $appends = ['login_at_format'];
+
+    public function getLoginAtFormatAttribute()
+    {
+        if(is_null($this->login_at)){
+            return "-";
+        }else{
+            return '<h5 class="mb-0"><span class="w-100 badge badge-success">'. Carbon::parse($this['login_at'])->isoFormat('DD MMMM YYYY, HH:m') .' WIB</span></h5>';
+        }
+    }
     
     public function tps():BelongsTo
     {
