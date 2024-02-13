@@ -1,7 +1,16 @@
 <div>
     <div class="row mt-2">
         <div class="col">
-            <h3 class="text-center m-1">{{$title}}</h3>
+            <div class="d-flex justify-content-between align-items-center">
+                <h3 class="text-center m-1">{{$title}} </h3>
+                <select id="mySelect">
+                    <optgroup label="Pilih Dapil">
+                        @foreach ($dapil as $item)
+                        <option {{$dapilId==$item['id']?'selected':null}} value="{{route('rekap.rekapPerDapil', $item['id'])}}">{{$item['no_dapil']}}</option>
+                        @endforeach
+                    </optgroup>
+                </select>
+            </div>
         </div>
     </div>
     <hr>

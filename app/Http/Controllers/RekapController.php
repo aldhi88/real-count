@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Calon;
+use App\Models\Dapil;
 use App\Models\Partai;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -14,7 +15,9 @@ class RekapController extends Controller
     {
         $data['page'] = 'rekap_per_dapil';
         $data['title'] = "REKAP PER DAPIL ".$dapilId;
-        $data['dapil'] = $dapilId;
+        $data['dapilId'] = $dapilId;
+        $data['dapil'] = Dapil::all()->toArray();
+
         return view('mods.rekap.index', compact('data'));
     }
     

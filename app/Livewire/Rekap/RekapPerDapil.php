@@ -10,12 +10,14 @@ class RekapPerDapil extends Component
     public $dapilId;
     public $dtRekap = [];
     public $title;
+    public $dapil;
     
 
     public function mount($data)
     {
-        $this->dapilId = $data['dapil'];
+        $this->dapilId = $data['dapilId'];
         $this->title = $data['title'];
+        $this->dapil = $data['dapil'];
         
         
     }

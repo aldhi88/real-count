@@ -97,22 +97,7 @@
                             <i class="fas fa-record-vinyl mr-2 text-danger fa-fw"></i>Live Rekap <div class="arrow-down"></div>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="topnav-more">
-                            <div class="dropdown">
-                                <a class="dropdown-item dropdown-toggle arrow-none" href="#" id="topnav-auth"
-                                    role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Rekap Per Dapil <div class="arrow-down"></div>
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="topnav-auth">
-                                    <a target="_blank" href="{{route('rekap.rekapPerDapil',1)}}" class="dropdown-item">Dapil 1</a>
-                                    <a target="_blank" href="{{route('rekap.rekapPerDapil',2)}}" class="dropdown-item">Dapil 2</a>
-                                    <a target="_blank" href="{{route('rekap.rekapPerDapil',3)}}" class="dropdown-item">Dapil 3</a>
-                                    <a target="_blank" href="{{route('rekap.rekapPerDapil',4)}}" class="dropdown-item">Dapil 4</a>
-                                </div>
-                            </div>
-                            
-                            {{-- <div class="dropdown-menu dropdown-menu-right" aria-labelledby="topnav-layout">
-                                <a href="{{ route('rekap.rekapPerDapil') }}" class="dropdown-item">Rekap per Dapil</a>
-                            </div> --}}
+                            <a target="_balnk"  href="{{route('rekap.rekapPerDapil',1)}}" class="dropdown-item">Rekap Per Dapil</a>
                         </div>
                     </li>
 

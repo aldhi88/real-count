@@ -17,16 +17,17 @@
         
     <script>
 
-    // window.addEventListener('reloadDt', param => {
-    //     dtTable.ajax.reload();
-    // });
+    $('#mySelect').change(function() {
+        var url = $(this).val();
+        window.location.href = url;
+    });
 
     function reloadDataTable() {
         dtTable.ajax.reload(); // Memuat ulang DataTable
         dtTable2.ajax.reload(); // Memuat ulang DataTable
     }
 
-    // setInterval(reloadDataTable, 2000); 
+    setInterval(reloadDataTable, 2000); 
 
     var dtTable = $('#myTable').DataTable({
         processing: false,serverSide: true,pageLength: 25,
