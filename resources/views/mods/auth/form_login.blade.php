@@ -87,7 +87,7 @@
             <div class="form-group auth-form-group-custom">
                 <i class="text-warning ri-lock-2-line auti-custom-input-icon"></i>
                 <label for="userpassword">Kata Sandi</label>
-                <input wire:model="password" type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Ketik kata sandi anda..">
+                <input wire:model="password" type="text" class="form-control @error('password') is-invalid @enderror" placeholder="Ketik kata sandi anda..">
                 @error('password') <div class="invalid-feedback">{{ $message }}</div> @enderror
 
             </div>

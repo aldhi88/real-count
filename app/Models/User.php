@@ -24,7 +24,7 @@ class User extends Authenticatable
         if(is_null($this->login_at)){
             return "-";
         }else{
-            return '<h5 class="mb-0"><span class="w-100 badge badge-success">'. Carbon::parse($this['login_at'])->isoFormat('DD MMMM YYYY, HH:m') .' WIB</span></h5>';
+            return '<h5 class="mb-0"><span class="w-100 badge badge-success">'. Carbon::parse($this['login_at'])->isoFormat('DD MMMM YYYY, HH:mm') .' WIB</span></h5>';
         }
     }
     
