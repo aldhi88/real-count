@@ -25,7 +25,7 @@
                                 <div wire:ignore>
                                     <table id="myTable1" 
                                         class="table table-bordered table-striped text-dark" 
-                                        style="border-collapse: collapse; border-spacing: 0; width: 100%;font-size: 18px">
+                                        style="border-collapse: collapse; border-spacing: 0; width: 100%;font-size: 16px">
                                         <thead class="thead-light">
                                         <tr>
                                             <th class="text-center" width="10">NO</th>
@@ -47,7 +47,7 @@
                                 <div wire:ignore>
                                     <table id="myTable2" 
                                         class="table table-bordered table-striped text-dark" 
-                                        style="border-collapse: collapse; border-spacing: 0; width: 100%;font-size: 18px">
+                                        style="border-collapse: collapse; border-spacing: 0; width: 100%;font-size: 16px">
                                         <thead class="thead-light">
                                         <tr>
                                             <th class="text-center" width="10">NO</th>
@@ -69,7 +69,7 @@
                                 <div wire:ignore>
                                     <table id="myTable3" 
                                         class="table table-bordered table-striped text-dark" 
-                                        style="border-collapse: collapse; border-spacing: 0; width: 100%;font-size: 18px">
+                                        style="border-collapse: collapse; border-spacing: 0; width: 100%;font-size: 16px">
                                         <thead class="thead-light">
                                         <tr>
                                             <th class="text-center" width="10">NO</th>
@@ -91,7 +91,7 @@
                                 <div wire:ignore>
                                     <table id="myTable4" 
                                         class="table table-bordered table-striped text-dark" 
-                                        style="border-collapse: collapse; border-spacing: 0; width: 100%;font-size: 18px">
+                                        style="border-collapse: collapse; border-spacing: 0; width: 100%;font-size: 16px">
                                         <thead class="thead-light">
                                         <tr>
                                             <th class="text-center" width="10">NO</th>
@@ -122,7 +122,7 @@
                         <div wire:ignore>
                             <table id="myTable2" 
                                 class="table table-bordered table-striped text-dark" 
-                                style="border-collapse: collapse; border-spacing: 0; width: 100%;font-size: 18px">
+                                style="border-collapse: collapse; border-spacing: 0; width: 100%;font-size: 16px">
                                 <thead class="thead-light">
                                 <tr>
                                     <th class="text-center" width="10"></th>
