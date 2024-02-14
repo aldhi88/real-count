@@ -48,7 +48,6 @@
         columns: [
             { data: 'no_urut', name: 'no_urut', orderable: true, searchable:false },
             { data: 'nama', name: 'nama', orderable: false, searchable:false },
-            // { data: 'partais.nama_partai', name: 'partais.nama_partai', orderable: true, searchable:true },
             { data: 'total_suara', name: 'total_suara', orderable: false, searchable:false,render: function(data, type, row) {
                 return data.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
             } },
@@ -79,11 +78,6 @@
             { data: 'id', name: 'id', orderable: true, searchable:false },
             { data: 'nama_partai', name: 'nama_partai', orderable: false, searchable:false },
             { data: 'total_suara', name: 'total_suara', orderable: false, searchable:false },
-
-            // { data: 'partais.nama_partai', name: 'partais.nama_partai', orderable: true, searchable:true },
-            // { data: 'total_suara', name: 'total_suara', orderable: false, searchable:false,render: function(data, type, row) {
-            //     return data.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-            // } },
         ],
         initComplete: function(settings){
             // table = settings.oInstance.api();

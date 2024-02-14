@@ -93,6 +93,7 @@ Route::middleware('auth:web')->group(function(){
                 
                 Route::get('/rekap-per-dapil-dt', 'rekapPerDapilDt')->name('rekapPerDapilDt');
                 Route::get('/rekap-per-dapil-dt2', 'rekapPerDapilDt2')->name('rekapPerDapilDt2');
+                Route::get('/rekap-dapil-dt', 'rekapDapilDt')->name('rekapDapilDt');
             });
         });
     });

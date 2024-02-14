@@ -24,8 +24,8 @@
     <div class="col">
         @if ($data['page'] == 'rekap_per_dapil')
             @livewire('rekap.rekap-per-dapil',['data' => $data])
-        {{-- @elseif ($data['page'] == 'dashboard_saksi') --}}
-        
+        @elseif ($data['page'] == 'rekap_dapil')
+        @livewire('rekap.rekap-dapil',['data' => $data])
         @endif
     </div>
 </div>

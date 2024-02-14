@@ -11,6 +11,39 @@ use DataTables;
 
 class RekapController extends Controller
 {
+    public function rekapDapil()
+    {
+        $data['page'] = 'rekap_dapil';
+        $data['title'] = "REKAP SEMUA DAPIL";
+        $data['dapil'] = Dapil::all()->toArray();
+
+        return view('mods.rekap.index', compact('data'));
+    }
+    public function rekapDapilDt(Request $request)
+    {
+        $data = Calon::select([
+                'calons.*'
+            ])
+            ->withCount([
+                'rekaps as total_suara' => function($q){
+                    $q->select(DB::raw('SUM(jumlah)'));
+                }
+            ])
+            ->with([
+                'partais'
+            ])
+            ->where('partai_id', 8)
+        ;
+
+        if(isset($request->dapilId)){
+            $data->where('dapil_id',$request->dapilId);
+        }
+        
+        return DataTables::of($data)
+            ->addIndexColumn()
+            ->toJson();
+    }
+    // ============================================
     public function rekapPerDapil($dapilId)
     {
         $data['page'] = 'rekap_per_dapil';

@@ -98,6 +98,7 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="topnav-more">
                             <a target="_balnk"  href="{{route('rekap.rekapPerDapil',1)}}" class="dropdown-item">Rekap Per Dapil</a>
+                            <a target="_balnk"  href="{{route('rekap.rekapDapil')}}" class="dropdown-item">Rekap Semua Dapil</a>
                         </div>
                     </li>
 
